@@ -6,7 +6,8 @@
     "start:dev": "next dev",
     "lint": "next lint",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-spring/parallax": "^9.2.3",
@@ -22,6 +23,7 @@
     "eslint-config-next": "^11.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
     "prettier": "^2.3.1"
   }
 }

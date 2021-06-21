@@ -12,12 +12,12 @@ class MainDocument extends Document {
           />
           <meta
             name="keywords"
-            content="porfolio, marco, escaleira, websites, web, frontend, front-end, motojoy"
+            content="portfolio, marco, escaleira, websites, web, frontend, front-end, motojoy"
           />
 
-          <meta name="robots" content="noindex, nofollow">
-            
-          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <meta name="robots" content="noindex, nofollow" />
+
+          <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
           <meta name="language" content="English" />
           <meta name="author" content="Marco Escaleira" />
 
