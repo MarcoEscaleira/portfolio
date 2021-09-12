@@ -27,6 +27,18 @@ module.exports = {
     "react/no-unescaped-entities": "warn",
     "react/no-unused-state": "warn",
     "react/react-in-jsx-scope": "off",
+    "react/jsx-wrap-multilines": [
+      2,
+      {
+        declaration: "parens-new-line",
+        assignment: "parens-new-line",
+        return: "parens-new-line",
+        arrow: "ignore",
+        condition: "ignore",
+        logical: "ignore",
+        prop: "ignore",
+      },
+    ],
 
     // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
     "import/no-extraneous-dependencies": "off",
