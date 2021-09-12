@@ -2,15 +2,6 @@
   "name": "marcoescaleira-portfolio",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "start:dev": "next dev",
-    "lint": "eslint \"**/*.{js,jsx}\"",
-    "lint:fix": "eslint --fix \"**/*.{js,jsx}\"",
-    "test": "jest",
-    "build": "next build",
-    "start": "next start",
-    "prepare": "husky install"
-  },
   "dependencies": {
     "@react-spring/parallax": "9.2.3",
     "axios": "0.21.1",
@@ -36,6 +27,25 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
     "jest": "^27.1.1",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.4.0"
+  },
+  "scripts": {
+    "start:dev": "next dev",
+    "lint": "eslint \"**/*.{js,jsx}\"",
+    "lint:fix": "eslint --fix \"**/*.{js,jsx}\"",
+    "test": "jest",
+    "build": "next build",
+    "start": "next start",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js, jsx}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,md,html}": [
+      "prettier --write"
+    ]
   }
 }
