@@ -22,7 +22,7 @@ module.exports = {
     "react/prop-types": "off",
     "react/jsx-pascal-case": "warn",
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-fragments": ["warn", "element"],
+    "react/jsx-fragments": ["off", "element"],
     "react/sort-comp": "warn",
     "react/no-unescaped-entities": "warn",
     "react/no-unused-state": "warn",

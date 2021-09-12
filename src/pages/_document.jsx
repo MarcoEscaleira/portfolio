@@ -18,6 +18,8 @@ class MainDocument extends Document {
           <meta name="language" content="English" />
           <meta name="author" content="Marco Escaleira" />
 
+          <link rel="icon" href="/favicon.ico" />
+
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"

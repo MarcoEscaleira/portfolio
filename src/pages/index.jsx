@@ -1,44 +1,18 @@
 import Head from "next/head";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-export default function Home() {
-  return (
-    <div>
-      <Head>
-        <title>Marco Escaleira</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+const Home = () => (
+  <>
+    <Head>
+      <title>Marco Escaleira</title>
+    </Head>
 
-      <main>
-        <Parallax pages={2} style={{ top: "0", left: "0" }}>
-          <ParallaxLayer
-            offset={0}
-            speed={2.5}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <h1>Marco Escaleira - Front End Developer</h1>
-          </ParallaxLayer>
+    <main className="min-h-full flex justify-center items-center bg-blue-100">
+      <div className="flex flex-col items-center">
+        <h1 className="text-4xl text-blue-800">Marco Escaleira - FE Developer</h1>
+        <span className="text-lg text-blue-400 font-light">Work in progress...</span>
+      </div>
+    </main>
+  </>
+);
 
-          <ParallaxLayer offset={1} speed={2} style={{ backgroundColor: "#ff6d6d" }} />
-
-          <ParallaxLayer
-            offset={1}
-            speed={0.5}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "white",
-            }}
-          >
-            <p>To be continued</p>
-          </ParallaxLayer>
-        </Parallax>
-      </main>
-    </div>
-  );
-}
+export default Home;
