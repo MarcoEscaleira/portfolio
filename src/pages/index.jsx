@@ -23,11 +23,7 @@ export default function Home() {
             <h1>Marco Escaleira - Front End Developer</h1>
           </ParallaxLayer>
 
-          <ParallaxLayer
-            offset={1}
-            speed={2}
-            style={{ backgroundColor: "#ff6d6d" }}
-          />
+          <ParallaxLayer offset={1} speed={2} style={{ backgroundColor: "#ff6d6d" }} />
 
           <ParallaxLayer
             offset={1}

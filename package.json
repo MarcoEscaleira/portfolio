@@ -1,29 +1,41 @@
 {
   "name": "marcoescaleira-portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start:dev": "next dev",
-    "lint": "next lint",
+    "lint": "eslint \"**/*.{js,jsx}\"",
+    "lint:fix": "eslint --fix \"**/*.{js,jsx}\"",
+    "test": "jest",
     "build": "next build",
     "start": "next start",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@react-spring/parallax": "^9.2.3",
-    "axios": "^0.21.1",
-    "next": "11.0.0",
-    "normalize.css": "^8.0.1",
+    "@react-spring/parallax": "9.2.3",
+    "axios": "0.21.1",
+    "next": "11.1.2",
+    "normalize.css": "8.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-spring": "^9.2.3"
+    "react-spring": "9.2.3"
   },
   "devDependencies": {
-    "eslint": "^7.29.0",
-    "eslint-config-next": "^11.0.0",
+    "@testing-library/dom": "^8.5.0",
+    "@testing-library/react": "^12.1.0",
+    "@testing-library/user-event": "^13.2.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
-    "prettier": "^2.3.1"
+    "jest": "^27.1.1",
+    "prettier": "^2.4.0"
   }
 }

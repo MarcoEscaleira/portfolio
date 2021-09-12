@@ -10,10 +10,7 @@ class MainDocument extends Document {
             name="description"
             content="My own personal portfolio on web development. A journey full-field of adventures and challenges overcome."
           />
-          <meta
-            name="keywords"
-            content="portfolio, marco, escaleira, websites, web, frontend, front-end, motojoy"
-          />
+          <meta name="keywords" content="portfolio, marco, escaleira, websites, web, frontend, front-end, motojoy" />
 
           <meta name="robots" content="noindex, nofollow" />
 
