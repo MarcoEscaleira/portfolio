@@ -14,34 +14,33 @@ module.exports = {
   },
   plugins: ["react", "react-hooks", "prettier", "import"],
   rules: {
-    "prettier/prettier": "warn",
+    "prettier/prettier": ["warn"],
 
     quotes: ["error", "double"],
+    "object-curly-newline": "off",
 
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md
+    "react/default-props-match-prop-types": "warn",
+    "react/no-unused-prop-types": "off",
     "react/prop-types": "off",
+    "react/destructuring-assignment": "off",
     "react/jsx-pascal-case": "warn",
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-fragments": ["off", "element"],
+    "react/jsx-fragments": "off",
+    "react/require-default-props": "off",
+    "react/static-property-placement": "off",
+    "react/state-in-constructor": "warn",
     "react/sort-comp": "warn",
     "react/no-unescaped-entities": "warn",
     "react/no-unused-state": "warn",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-wrap-multilines": [
-      2,
-      {
-        declaration: "parens-new-line",
-        assignment: "parens-new-line",
-        return: "parens-new-line",
-        arrow: "ignore",
-        condition: "ignore",
-        logical: "ignore",
-        prop: "ignore",
-      },
-    ],
+
+    // https://github.com/gajus/eslint-plugin-flowtype
+    "flowtype/no-weak-types": "off",
 
     // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
     "import/no-extraneous-dependencies": "off",
+    "import/extensions": [0, "never", { ts: "never" }],
     "import/prefer-default-export": "off",
     "import/no-named-as-default": "off",
     "import/named": "warn",
@@ -49,6 +48,16 @@ module.exports = {
     // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/anchor-is-valid": "warn",
+
+    // https://www.npmjs.com/package/eslint-plugin-jest
+    "jest/no-done-callback": "off",
+    "jest/no-mocks-import": "off",
+    "jest/no-try-expect": "off",
+    "jest/valid-expect-in-promise": "off",
+    "jest/no-conditional-expect": "off",
+    "jest/no-export": "off",
+    "jest/valid-title": "off",
+    "jest/valid-expect": "off",
 
     "prefer-promise-reject-errors": "off",
     "global-require": "off",
@@ -60,6 +69,5 @@ module.exports = {
     "no-compare-neg-zero": "warn",
     "no-unused-expressions": "warn",
     "no-return-assign": "warn",
-    "object-curly-newline": "off",
   },
 };
