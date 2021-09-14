@@ -4,6 +4,7 @@ module.exports = {
     title: "Marco Escaleira",
   },
   plugins: [
+    "gatsby-plugin-offline",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
