@@ -1,10 +1,11 @@
-import Head from "next/head";
+import React from "react";
+import Helmet from "react-helmet";
 
 const Home = () => (
   <>
-    <Head>
+    <Helmet>
       <title>Marco Escaleira</title>
-    </Head>
+    </Helmet>
 
     <main className="min-h-full flex justify-center items-center bg-blue-100">
       <div className="flex flex-col items-center">

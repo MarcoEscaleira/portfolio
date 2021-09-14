@@ -8,9 +8,9 @@
 # testing
 /coverage
 
-# next.js
-/.next/
+.cache/
 /out/
+public/
 
 # production
 /build
