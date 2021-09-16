@@ -14,52 +14,12 @@ body {
   font-size: 14px;
 }
 
-#scrollPath {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 10px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.05);
+body.dark {
+  --primary: #111827;
+  --text-main: white;
 }
 
-#progressbar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 10px;
-  background: linear-gradient(to top, #008aff, #00ffe7);
-  animation: animate 5% linear infinite;
-}
-
-@keyframes animate {
-  0%,
-  100% {
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    filter: hue-rotate(360deg);
-  }
-}
-
-#progressbar:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 10px;
-  height: 100%;
-  background: linear-gradient(to top, #008aff, #00ffe7);
-  filter: blur(10px);
-}
-
-#progressbar:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 10px;
-  height: 100%;
-  background: linear-gradient(to top, #008aff, #00ffe7);
-  filter: blur(15px);
+body.light {
+  --primary: white;
+  --text-main: #111827;
 }

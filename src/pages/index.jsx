@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 const Home = () => (
   <>
     <Helmet>
-      <title>Marco Escaleira</title>
+      <title>Home - Marco Escaleira</title>
     </Helmet>
 
     <header className="w-full h-20 fixed top-0 left-0 bg-transparent flex justify-around items-center">
