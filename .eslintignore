@@ -1,7 +1,8 @@
-**/node_modules/*
-**/out/*
-**/build/*
-**/.cache/*
-**/.github/*
-**/.husky/*
+build/
+.github/
+.husky/
+.vercel/
+public/
+.cache/
+node_modules/
 html.js

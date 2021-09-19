@@ -4,11 +4,11 @@
 echo '🏗️👷 Styling, testing and building your project before committing'
 
 # Check ESLint Standards
-#  yarn lint:fix ||
-#  (
-#      echo '🙈👷🔨❌ Yoo, your code looks disgusting. Check linter 🙈👷🔨❌
-#            Run yarn lint, add changes and try commit again.';
-#      false;
-#  )
+yarn lint:fix ||
+(
+    echo '🙈👷🔨❌ Yoo, your code looks disgusting. Check linter 🙈👷🔨❌
+          Run yarn lint, add changes and try commit again.';
+    false;
+)
 
 echo '🎉🎉🎉🎉 Yeayy, there is no error in your code... I am committing this now. ✨🚀🏄‍♂️🍻'
