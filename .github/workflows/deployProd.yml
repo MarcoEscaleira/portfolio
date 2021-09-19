@@ -1,4 +1,4 @@
-name: "Deploy CD"
+name: "Deploy Prod"
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
 jobs:
   vercel:
     runs-on: ubuntu-latest
-    name: "Deploy FE"
+    name: "Deploy Prod"
 
     steps:
       - uses: actions/checkout@v2
@@ -15,7 +15,7 @@ jobs:
           node-version: '14'
           registry-url: https://registry.npmjs.org/
 
-      - name: "Deploy to Vercel"
+      - name: "Deploy to Vercel Production"
         run: npx vercel --token ${VERCEL_TOKEN} --prod
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
