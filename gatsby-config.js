@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://marcoescaleira.pt/",
+    siteUrl: "https://escaleira.dev/",
     title: "Marco Escaleira",
   },
   plugins: [
@@ -11,8 +11,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "marcoescaleira.pt",
-        short_name: "marcoe",
+        name: "escaleira.dev",
+        short_name: "escaleira",
         start_url: "/",
         background_color: "#663399",
         theme_color: "#663399",

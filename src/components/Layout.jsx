@@ -8,7 +8,9 @@ const Layout = ({ children }) => (
 
     <Header />
 
-    <main className="min-h-full flex flex-col bg-blue-100 filter hue-rotate-15">{children}</main>
+    <main className="min-h-full flex flex-col bg-blue-100 filter hue-rotate-15">
+      {children}
+    </main>
   </>
 );
 
