@@ -18,6 +18,7 @@ export default function HTML(props) {
 
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
+        <meta charSet="UTF-8" />
         <meta name="author" content="Marco Escaleira" />
 
         <link rel="icon" href="/logo.png" />

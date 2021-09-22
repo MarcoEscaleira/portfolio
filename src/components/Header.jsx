@@ -40,11 +40,13 @@ const Header = () => {
             isCollapsed && tw`text-3xl`,
           ]}
         >
-          ESCALEIRA.
-          <b>DEV</b>
+          <h1>
+            ESCALEIRA.
+            <b>DEV</b>
+          </h1>
         </a>
       </div>
-      <nav className="flex flex-1 justify-center">
+      <nav className="hidden flex flex-1 justify-center">
         <a href="#about-me" className="px-8">
           About Me
         </a>
