@@ -28,7 +28,7 @@ const Header = () => {
     <header
       ref={headerRef}
       css={[
-        tw`transition-all w-full h-20 fixed top-0 left-0 bg-transparent flex justify-around items-center`,
+        tw`transition-all w-full h-20 fixed top-0 left-0 bg-transparent flex justify-around items-center z-50`,
         isCollapsed && tw`h-14`,
       ]}
     >
