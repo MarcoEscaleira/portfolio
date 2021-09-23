@@ -34,6 +34,7 @@ module.exports = {
     "react/no-unescaped-entities": "warn",
     "react/no-unused-state": "warn",
     "react/react-in-jsx-scope": "off",
+    "react/jsx-one-expression-per-line": "off",
 
     // https://github.com/gajus/eslint-plugin-flowtype
     "flowtype/no-weak-types": "off",
