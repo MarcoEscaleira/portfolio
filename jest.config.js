@@ -22,5 +22,8 @@ module.exports = {
   transform: {
     "^.+\\.jsx?$": "<rootDir>/jest-preprocess.js",
   },
-  transformIgnorePatterns: ["/node_modules/", "^.+\\.module\\.(css|sass|scss)$"],
+  transformIgnorePatterns: [
+    "/node_modules/",
+    "^.+\\.module\\.(css|sass|scss)$",
+  ],
 };

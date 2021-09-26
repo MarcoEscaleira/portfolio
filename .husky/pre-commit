@@ -11,4 +11,6 @@ yarn lint:fix ||
     false;
 )
 
+git add .
+
 echo '🎉🎉🎉🎉 Yeayy, there is no error in your code... I am committing this now. ✨🚀🏄‍♂️🍻'

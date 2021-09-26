@@ -1,22 +1,90 @@
 import React from "react";
 import Helmet from "react-helmet";
-import Header from "../components/Header";
+import { StaticImage } from "gatsby-plugin-image";
+import tw, { css } from "twin.macro";
+import Layout from "../components/Layout";
+import SocialList from "../components/SocialList";
 
 const Home = () => (
-  <>
+  <Layout>
     <Helmet>
-      <title>Home - Marco Escaleira</title>
+      <title>Escaleira - Mini Developer</title>
     </Helmet>
 
-    <Header />
-
-    <main className="min-h-full flex justify-center items-center bg-blue-100 mb-48">
-      <div className="flex flex-col items-center">
-        <h1 className="text-4xl text-blue-800">Marco Escaleira - FE Developer</h1>
-        <span className="text-lg text-blue-400 font-light">Work in progress...</span>
+    <section className="h-screen flex flex-col items-center justify-center">
+      <div className="flex items-center max-w-2xl flex-col md:flex-row">
+        <div className="relative">
+          <StaticImage
+            src="https://res.cloudinary.com/dtmrbsbm6/image/upload/v1632345003/selfie1_fdffew.jpg"
+            alt="Marco Escaleira"
+            css={[
+              tw`w-full rounded-full shadow-xl mb-10 md:mb-0 md:mr-6`,
+              css`
+                max-width: 200px;
+                max-height: 200px;
+                @media (min-width: 768px) {
+                  min-width: 200px;
+                  min-height: 200px;
+                }
+              `,
+            ]}
+          />
+          <SocialList />
+        </div>
+        <div className="flex flex-col px-4 md:px-0">
+          <h2 className="text-3xl text-gray-800 flex flex-col sm:block">
+            Hi 👋, <span>I am Marco Escaleira!</span>
+          </h2>
+          <span className="text-sm font-light">
+            More known as &quot;<b>Mini Marco</b>&quot;
+          </span>
+          <p className="text-base mt-4">
+            I love the web, javascript, and learn new things! Challenges and
+            hard problems? Great, they will bring a lot of learning and teamwork
+            and in the end will fulfill with more solutions and one less problem
+            :)
+          </p>
+          <SocialList isMobile />
+        </div>
       </div>
-    </main>
-  </>
+    </section>
+
+    <section
+      id="about-me"
+      className="hidden h-96 bg-gray-300 flex flex-col justify-center items-center"
+    >
+      <h2 className="text-center">About me</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab animi
+        atque commodi dicta dignissimos dolor error eveniet magnam, maxime minus
+        nostrum odio quasi qui, quia quidem repellat repudiandae veritatis.
+      </p>
+    </section>
+
+    <section
+      id="portfolio"
+      className="hidden h-96 bg-gray-200 flex flex-col justify-center items-center"
+    >
+      <h2>Portfolio</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab animi
+        atque commodi dicta dignissimos dolor error eveniet magnam, maxime minus
+        nostrum odio quasi qui, quia quidem repellat repudiandae veritatis.
+      </p>
+    </section>
+
+    <section
+      id="contact"
+      className="hidden h-96 bg-gray-400 flex flex-col justify-center items-center"
+    >
+      <h2>Contact</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab animi
+        atque commodi dicta dignissimos dolor error eveniet magnam, maxime minus
+        nostrum odio quasi qui, quia quidem repellat repudiandae veritatis.
+      </p>
+    </section>
+  </Layout>
 );
 
 export default Home;

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://marcoescaleira.pt/",
-    title: "Marco Escaleira",
+    siteUrl: "https://escaleira.dev/",
+    title: "Escaleira Dev",
   },
   plugins: [
     "gatsby-plugin-offline",
@@ -11,11 +11,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "marcoescaleira.pt",
-        short_name: "marcoe",
+        name: "escaleira.dev",
+        short_name: "escaleira",
         start_url: "/",
-        background_color: "#663399",
-        theme_color: "#663399",
+        background_color: "#F3F4F6",
+        theme_color: "#F3F4F6",
         icon: "src/images/logo.png",
       },
     },
@@ -30,5 +30,6 @@ module.exports = {
       __key: "images",
     },
     "gatsby-plugin-postcss",
+    "gatsby-plugin-emotion",
   ],
 };
