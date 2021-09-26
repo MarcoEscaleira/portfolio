@@ -42,7 +42,7 @@ const Home = () => (
             I love the web, javascript, and learn new things! Challenges and
             hard problems? Great, they will bring a lot of learning and teamwork
             and in the end will fulfill with more solutions and one less problem
-            :) QA
+            :)
           </p>
           <SocialList isMobile />
         </div>
