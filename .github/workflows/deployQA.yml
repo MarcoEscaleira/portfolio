@@ -2,7 +2,7 @@ name: "Deploy QA"
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ qa ]
 
 jobs:
   vercel:
