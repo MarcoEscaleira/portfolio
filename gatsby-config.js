@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://escaleira.dev/",
-    title: "Marco Escaleira",
+    title: "Escaleira Dev",
   },
   plugins: [
     "gatsby-plugin-offline",
@@ -14,8 +14,8 @@ module.exports = {
         name: "escaleira.dev",
         short_name: "escaleira",
         start_url: "/",
-        background_color: "#663399",
-        theme_color: "#663399",
+        background_color: "#F3F4F6",
+        theme_color: "#F3F4F6",
         icon: "src/images/logo.png",
       },
     },
