@@ -8,7 +8,7 @@ const Layout = ({ children }) => (
 
     <Header />
 
-    <main className="min-h-full flex flex-col bg-gray-100">{children}</main>
+    <main className="min-h-full flex flex-col bg-gray-200">{children}</main>
   </>
 );
 

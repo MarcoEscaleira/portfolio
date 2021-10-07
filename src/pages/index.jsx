@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import { StaticImage } from "gatsby-plugin-image";
 import tw, { css } from "twin.macro";
+import WavesSvg from "../assets/waves.svg";
 import Layout from "../components/Layout";
 import SocialList from "../components/SocialList";
 
@@ -11,7 +12,9 @@ const Home = () => (
       <title>Escaleira - Mini Developer</title>
     </Helmet>
 
-    <section className="h-screen flex flex-col items-center justify-center">
+    <WavesSvg className="h-screen w-screen absolute top-0 left-0 z-0" />
+
+    <section className="h-screen flex flex-col items-center justify-center z-10">
       <div className="flex items-center max-w-2xl flex-col md:flex-row">
         <div className="relative">
           <StaticImage
@@ -48,7 +51,6 @@ const Home = () => (
         </div>
       </div>
     </section>
-
     <section
       id="about-me"
       className="hidden h-96 bg-gray-300 flex flex-col justify-center items-center"
@@ -60,7 +62,6 @@ const Home = () => (
         nostrum odio quasi qui, quia quidem repellat repudiandae veritatis.
       </p>
     </section>
-
     <section
       id="portfolio"
       className="hidden h-96 bg-gray-200 flex flex-col justify-center items-center"
@@ -72,7 +73,6 @@ const Home = () => (
         nostrum odio quasi qui, quia quidem repellat repudiandae veritatis.
       </p>
     </section>
-
     <section
       id="contact"
       className="hidden h-96 bg-gray-400 flex flex-col justify-center items-center"

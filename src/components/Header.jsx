@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import tw from "twin.macro";
+import "../styles/animations.css";
 
 const Header = () => {
   const headerRef = useRef(null);
@@ -40,7 +41,7 @@ const Header = () => {
             isCollapsed && tw`text-3xl`,
           ]}
         >
-          <h1>
+          <h1 className="focus-in-expand">
             ESCALEIRA.
             <b>DEV</b>
           </h1>
