@@ -29,7 +29,8 @@ const Header = () => {
     <header
       ref={headerRef}
       css={[
-        tw`transition-all w-full h-20 fixed top-0 left-0 bg-transparent flex justify-around items-center z-50`,
+        tw`transition-all w-full h-14 md:h-20 fixed top-0 left-0 bg-transparent 
+            flex justify-around items-center z-50`,
         isCollapsed && tw`h-14`,
       ]}
     >
@@ -37,7 +38,7 @@ const Header = () => {
         <a
           href="#home"
           css={[
-            tw`transition-all text-5xl font-light border-l border-gray-700 pl-2`,
+            tw`transition-all text-4xl sm:text-5xl font-light border-l border-gray-700 pl-2`,
             isCollapsed && tw`text-3xl`,
           ]}
         >

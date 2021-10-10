@@ -85,13 +85,13 @@
 }
 
 .delay-bg--3 {
-    animation-delay: 600ms;
+    animation-delay: 500ms;
 }
 
 .delay-bg--4 {
-    animation-delay: 0.9s;
+    animation-delay: 700ms;
 }
 
 .delay-bg--5 {
-    animation-delay: 1.2s;
+    animation-delay: 900ms;
 }

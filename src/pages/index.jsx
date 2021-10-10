@@ -21,7 +21,7 @@ const Home = () => (
             src="https://res.cloudinary.com/dtmrbsbm6/image/upload/v1632345003/selfie1_fdffew.jpg"
             alt="Marco Escaleira"
             css={[
-              tw`w-full rounded-full shadow-xl mb-10 md:mb-0 md:mr-6`,
+              tw`w-full rounded-full shadow-xl mb-4 sm:mb-10 md:mb-0 md:mr-6`,
               css`
                 max-width: 200px;
                 max-height: 200px;
@@ -50,17 +50,6 @@ const Home = () => (
           <SocialList isMobile />
         </div>
       </div>
-    </section>
-    <section
-      id="about-me"
-      className="hidden h-96 bg-gray-300 flex flex-col justify-center items-center"
-    >
-      <h2 className="text-center">About me</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab animi
-        atque commodi dicta dignissimos dolor error eveniet magnam, maxime minus
-        nostrum odio quasi qui, quia quidem repellat repudiandae veritatis.
-      </p>
     </section>
     <section
       id="portfolio"

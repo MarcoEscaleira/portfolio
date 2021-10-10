@@ -3,7 +3,7 @@ import tw from "twin.macro";
 
 const SocialList = ({ isMobile = false }) => {
   const ListItem = tw.li`flex justify-center`;
-  const ListLink = tw.a`h-10 hover:underline`;
+  const ListLink = tw.a`h-10 hover:underline flex items-center`;
 
   return (
     <ul
