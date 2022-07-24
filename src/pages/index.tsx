@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import Helmet from "react-helmet";
 import { StaticImage } from "gatsby-plugin-image";
 import tw, { css } from "twin.macro";
@@ -6,7 +6,7 @@ import WavesSvg from "../assets/waves.svg";
 import Layout from "../components/Layout";
 import SocialList from "../components/SocialList";
 
-const Home = () => (
+const Home: FC = () => (
   <Layout>
     <Helmet>
       <title>Escaleira - Mini Developer</title>

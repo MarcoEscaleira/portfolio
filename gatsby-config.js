@@ -9,6 +9,14 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
+      resolve: "gatsby-plugin-typescript",
+      options: {
+        isTSX: true,
+        jsxPragma: "jsx",
+        allExtensions: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "escaleira.dev",

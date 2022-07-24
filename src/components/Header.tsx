@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import tw from "twin.macro";
 import "../styles/animations.css";
 
-const Header = () => {
+const Header: FC = () => {
   const headerRef = useRef(null);
   const [hasDefinedListener, setHasDefinedListener] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
