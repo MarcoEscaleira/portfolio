@@ -1,29 +1,21 @@
-module.exports = {
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  collectCoverageFrom: ["**/*.{js,jsx}", "!**/node_modules/**"],
+const nextJest = require('next/jest')
+
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: './',
+})
+
+// Add any custom config to be passed to Jest
+const customJestConfig = {
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
-    // Handle CSS imports (with CSS modules)
-    "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
+    // Handle module aliases (this will be automatically configured for you soon)
+    '^@/components/(.*)$': '<rootDir>/components/$1',
 
-    // Handle CSS imports (without CSS modules)
-    "^.+\\.(css|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+    '^@/pages/(.*)$': '<rootDir>/pages/$1',
+  },
+  testEnvironment: 'jest-environment-jsdom',
+}
 
-    // Handle image imports
-    "^.+\\.(jpg|jpeg|png|gif|webp|svg)$": "<rootDir>/src/__mocks__/fileMock.js",
-  },
-  testPathIgnorePatterns: [
-    "<rootDir>/node_modules/",
-    "<rootDir>/.husky/",
-    "<rootDir>/.github/",
-    "<rootDir>/.cache/",
-    "node_modules/(?!(gatsby)/)",
-  ],
-  testEnvironment: "jsdom",
-  transform: {
-    "^.+\\.jsx?$": "<rootDir>/jest-preprocess.js",
-  },
-  transformIgnorePatterns: [
-    "/node_modules/",
-    "^.+\\.module\\.(css|sass|scss)$",
-  ],
-};
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+module.exports = createJestConfig(customJestConfig)
