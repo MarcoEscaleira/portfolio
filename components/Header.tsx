@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { HomeIcon } from "@heroicons/react/24/outline";
 import { NextFont } from "@next/font/dist/types";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import Link from "next/link";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
@@ -15,20 +15,20 @@ const Header: FC<IHeaderProps> = ({ font }) => {
   return (
     <header className={font.className}>
       <div className="w-full h-16 flex items-center justify-between px-4">
-        <section className='flex items-center'>
-          <HomeIcon className="w-8 accent-blue-500" />
-          <nav className="flex gap-4 ml-4">
+        <section className="flex items-center">
+          <Image src="/logo-white.svg" alt="logo-marco" height={60} width={60} />
+          <nav className="flex gap-4 ml-8">
             {[
               ["Home", "/"],
               ["Portfolio", "/portfolio"],
               ["Contact", "/contact"],
             ].map(([title, path]) => {
-              const isActiveClass = router.pathname === path ? "bg-white text-slate-900" : "";
+              const isActiveClass = router.pathname === path ? "border-b border-b-white text-slate-200" : "";
               return (
                 <Link
                   key={path}
                   href={path}
-                  className={`rounded-lg px-3 py-2 font-medium hover:bg-slate-100 hover:text-slate-900 ${isActiveClass}`}
+                  className={`px-3 py-2 font-medium hover:border-b hover:border-b-white hover:text-slate-200 ${isActiveClass}`}
                 >
                   {title}
                 </Link>
