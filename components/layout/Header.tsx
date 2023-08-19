@@ -9,7 +9,7 @@ interface IHeaderProps {
   font: NextFont;
 }
 
-const Header: FC<IHeaderProps> = ({ font }) => {
+export const Header: FC<IHeaderProps> = ({ font }) => {
   const router = useRouter();
 
   return (
@@ -43,5 +43,3 @@ const Header: FC<IHeaderProps> = ({ font }) => {
     </header>
   );
 };
-
-export default Header;

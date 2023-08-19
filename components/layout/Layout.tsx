@@ -1,14 +1,15 @@
+import { FC } from "react";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 import { NextFont } from "@next/font/dist/types";
-import Header from "@/components/Header";
+import { Header, Footer } from "@/components/layout";
 
 type LayoutProps = {
   children: React.ReactNode;
   font: NextFont;
 };
 
-export default function Layout({ children, font }: LayoutProps) {
+export const Layout: FC<LayoutProps> = ({ children, font }) => {
   return (
     <>
       <Head>
@@ -20,16 +21,14 @@ export default function Layout({ children, font }: LayoutProps) {
       </Head>
 
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <div className="w-full h-screen bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 text-gray-100 dark:text-white">
+        <div className="flex flex-col w-full h-screen bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 text-gray-100 dark:text-white">
           <Header font={font} />
 
-          <main className={font.className}>{children}</main>
+          <main className={`${font.className} flex-1`}>{children}</main>
 
-          <footer className={font.className}>
-            <p>Powered by Marco Escaleira</p>
-          </footer>
+          <Footer font={font} />
         </div>
       </ThemeProvider>
     </>
   );
-}
+};
