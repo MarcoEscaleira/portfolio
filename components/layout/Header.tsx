@@ -13,8 +13,8 @@ export const Header: FC<IHeaderProps> = ({ font }) => {
   const router = useRouter();
 
   return (
-    <header className={font.className}>
-      <div className="w-full h-16 flex items-center justify-between px-4">
+    <header className={`${font.className} w-full h-16`}>
+      <div className="container flex flex-col items-center justify-between p-6 mx-auto space-y-4 sm:space-y-0 sm:flex-row">
         <section className="flex items-center">
           <Image src="/logo-white.svg" alt="logo-marco" height={60} width={60} />
           <nav className="flex gap-4 ml-8">
