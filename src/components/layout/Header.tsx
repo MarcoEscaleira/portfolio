@@ -3,7 +3,7 @@ import { NextFont } from "@next/font/dist/types";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { ThemeSwitcher } from "src/components/ThemeSwitcher";
 
 interface IHeaderProps {
   font: NextFont;
