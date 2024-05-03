@@ -16,8 +16,6 @@ export const Footer: FC<IFooterProps> = ({ font }) => {
           <Image src="/logo-white.svg" alt="logo-marco" height={60} width={60} className="text-black" />
         </Link>
 
-        <p className="text-sm text-gray-100 dark:text-gray-300">© Copyright 2023. All Rights Reserved.</p>
-
         <div className="-mx-2 flex">
           <Link
             href="https://www.linkedin.com/in/marco-escaleira00/"
