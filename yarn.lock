@@ -46,11 +46,6 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-"@heroicons/react@^2.0.18":
-  version "2.0.18"
-  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.18.tgz#f80301907c243df03c7e9fd76c0286e95361f7c1"
-  integrity sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==
-
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.14.tgz#d78e481a039f7566ecc9660b4ea7fe6b1fec442b"
@@ -125,11 +120,6 @@
   integrity sha512-L3oDricIIjgj1AVnRdRor21gI7mShlSwU/1ZGHmqM3LzHhXXhdkrfeNY5zif25Bi5Dd7fiJHsbhoZCHfXYvlAw==
   dependencies:
     glob "10.3.10"
-
-"@next/font@^13.4.18":
-  version "13.4.18"
-  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.4.18.tgz#184c6ee74c9633549f272947bb8bc9471529d275"
-  integrity sha512-Xypz8ERqDRLru0+bUa+9z6qMrK2bIiFhNB2rWWvb/wGiXtGTgbNPrJLqXa+NgY1Vrzu/4GkR09USEgRkDsLqaA==
 
 "@next/swc-darwin-arm64@14.2.3":
   version "14.2.3"
