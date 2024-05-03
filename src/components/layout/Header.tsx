@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { NextFont } from "@next/font/dist/types";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import { NextFont } from "next/dist/compiled/@next/font";
 import { ThemeSwitcher } from "src/components/ThemeSwitcher";
 
 interface IHeaderProps {

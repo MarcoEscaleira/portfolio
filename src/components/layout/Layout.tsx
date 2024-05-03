@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
-import { NextFont } from "@next/font/dist/types";
+import { NextFont } from "next/dist/compiled/@next/font";
 import { Header, Footer } from "@/components/layout";
 
 type LayoutProps = {
