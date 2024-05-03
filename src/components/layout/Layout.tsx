@@ -1,7 +1,7 @@
 import { FC } from "react";
+import { NextFont } from "next/dist/compiled/@next/font";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
-import { NextFont } from "next/dist/compiled/@next/font";
 import { Header, Footer } from "@/components/layout";
 
 type LayoutProps = {
@@ -21,7 +21,7 @@ export const Layout: FC<LayoutProps> = ({ children, font }) => {
       </Head>
 
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <div className="flex flex-col w-full h-screen bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 text-gray-100 dark:text-white">
+        <div className="flex h-screen w-full flex-col bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 text-gray-100 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 dark:text-white">
           <Header font={font} />
 
           <main className={`${font.className} flex-1`}>{children}</main>
