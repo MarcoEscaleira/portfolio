@@ -1,3 +1,4 @@
+import { Button } from "@material-tailwind/react";
 import { Linkedin } from "lucide-react";
 import Link from "next/link";
 
@@ -11,7 +12,7 @@ export default function Contact() {
           Feel free to reach out with any questions or thoughts. I&apos;m all ears and eager to connect!
         </p>
 
-        <div className="mt-6 md:mt-8 flex items-center gap-1">
+        <div className="mt-6 flex items-center gap-1 md:mt-8">
           <h3 className="font-medium text-gray-100 dark:text-gray-300">Follow me on</h3>
 
           <div className="flex">
@@ -56,9 +57,9 @@ export default function Contact() {
             ></textarea>
           </div>
 
-          <button className="mt-4 w-full transform rounded-md bg-blue-500 px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-            get in touch
-          </button>
+          <Button fullWidth color="blue" className="mt-4">
+            Get in touch
+          </Button>
         </form>
       </div>
     </section>
