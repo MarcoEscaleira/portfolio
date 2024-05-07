@@ -1,15 +1,12 @@
-import { FC } from "react";
-import { NextFont } from "next/dist/compiled/@next/font";
+import { PropsWithChildren } from "react";
+import { Inter } from "next/font/google";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 import { Header, Footer } from "@/components/layout";
 
-type LayoutProps = {
-  children: React.ReactNode;
-  font: NextFont;
-};
+const inter = Inter({ subsets: ["latin"] });
 
-export const Layout: FC<LayoutProps> = ({ children, font }) => {
+export const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
       <Head>
@@ -22,11 +19,11 @@ export const Layout: FC<LayoutProps> = ({ children, font }) => {
 
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <div className="flex h-screen w-full flex-col bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 text-gray-100 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 dark:text-white">
-          <Header font={font} />
+          <Header />
 
-          <main className={`${font.className} flex-1 flex justify-center`}>{children}</main>
+          <main className={`${inter.className} flex flex-1 justify-center`}>{children}</main>
 
-          <Footer font={font} />
+          <Footer />
         </div>
       </ThemeProvider>
     </>

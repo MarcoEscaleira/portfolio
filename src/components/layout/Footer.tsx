@@ -1,16 +1,11 @@
 import { FC } from "react";
 import { Github, Linkedin } from "lucide-react";
-import { NextFont } from "next/dist/compiled/@next/font";
 import Image from "next/image";
 import Link from "next/link";
 
-interface IFooterProps {
-  font: NextFont;
-}
-
-export const Footer: FC<IFooterProps> = ({ font }) => {
+export const Footer: FC = () => {
   return (
-    <footer className={`${font.className} bg-transparent dark:bg-gray-900`}>
+    <footer className={`bg-transparent dark:bg-gray-900`}>
       <div className="container mx-auto flex flex-col items-center justify-between space-y-4 p-6 sm:flex-row sm:space-y-0">
         <Link href="/">
           <Image src="/logo-white.svg" alt="logo-marco" height={60} width={60} className="text-black" />
