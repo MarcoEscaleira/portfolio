@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
@@ -26,6 +27,8 @@ export const Layout = ({ children }: PropsWithChildren) => {
           <Footer />
         </div>
       </ThemeProvider>
+
+      <Analytics />
     </>
   );
 };
