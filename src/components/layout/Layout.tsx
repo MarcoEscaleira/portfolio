@@ -11,7 +11,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
       <Head>
-        <title>Escaleira&apos;s Portfolio</title>
+        <title>Marco Escaleira</title>
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

@@ -1,26 +1,18 @@
-import { useState, useEffect } from "react";
+import { Button } from "@material-tailwind/react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export const ThemeSwitcher = () => {
-  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
   return (
-    <button
-      className="rounded-md p-1 duration-200 hover:scale-110 active:scale-100 dark:bg-[#212933]"
+    <Button
+      variant="text"
+      className="duration-200 hover:scale-110 active:scale-100 text-white-500 dark:text-gray-200"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label="Color mode switch"
     >
-      {theme === "light" ? <Moon className="w-4" /> : <Sun className="w-4" />}
-    </button>
+      {theme === "light" ? <Moon className="size-5" /> : <Sun className="size-5" />}
+    </Button>
   );
 };

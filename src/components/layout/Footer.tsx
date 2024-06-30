@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const Footer: FC = () => {
   return (
-    <footer className={`bg-transparent dark:bg-gray-900`}>
+    <footer className={`bg-transparent`}>
       <div className="container mx-auto flex items-center justify-between p-4 sm:flex-row sm:p-6">
         <Link href="/">
           <Image src="/logo-white.svg" alt="logo-marco" height={60} width={60} className="text-black" />
