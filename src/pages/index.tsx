@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="container flex flex-col items-center justify-center md:flex-row">
       <Image src="/marco.jpg" alt="Marco's face" width={250} height={250} className="rounded-[50%] shadow" />
-      <div className="ml-10">
+      <div className="p-4 md:ml-10 md:p-0">
         <Typography variant="h1" className="mb-2">
           Hi 👋, I&apos;m Marco Escaleira.
         </Typography>
@@ -20,7 +20,7 @@ export default function Home() {
           enthusiasm for teamwork and my proactive communication style enhance our collective success.
         </Typography>
 
-        <div className="flex justify-center">
+        <div className="hidden justify-center md:flex">
           <Link
             href="https://www.linkedin.com/in/marco-escaleira00/"
             target="_blank"
