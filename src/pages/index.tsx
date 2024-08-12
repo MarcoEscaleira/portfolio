@@ -12,8 +12,8 @@ export default function Home() {
       >
         <Image src="/marco.jpg" alt="Marco's face" width={200} height={200} className="rounded-[100%] shadow" />
         <div className="p-4 md:ml-10 md:p-0">
-          <Typography variant="h1" className="mb-2">
-            Hi, I&apos;m Marco Escaleira.
+          <Typography variant="h1" className="mb-2 text-3xl sm:text-4xl lg:text-5xl">
+            Hello there!
           </Typography>
           <Typography variant="lead" className="mb-6">
             You landed in the right place!
