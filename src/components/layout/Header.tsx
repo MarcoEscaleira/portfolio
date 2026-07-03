@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { scrollToSection } from "@/components/SmoothScroll";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 const NAV_LINKS: [string, string][] = [
@@ -32,7 +33,7 @@ export const Header: FC = () => {
                   className="px-3 py-2 font-medium text-fg hover:border-b hover:border-b-accent"
                   onClick={e => {
                     e.preventDefault();
-                    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                    scrollToSection(id);
                   }}
                 >
                   {title}

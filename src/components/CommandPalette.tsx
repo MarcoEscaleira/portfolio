@@ -1,5 +1,6 @@
 import { KeyboardEvent, useEffect, useRef, useState } from "react";
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, useCommandState } from "cmdk";
+import { scrollToSection } from "@/components/SmoothScroll";
 import { projects } from "@/data/projects";
 
 const GITHUB_URL = "https://github.com/MarcoEscaleira";
@@ -15,10 +16,6 @@ const SECTION_COMMANDS: { id: string; label: string; description: string }[] = [
   { id: "skills", label: "skills", description: "tools of the trade" },
   { id: "contact", label: "contact", description: "say hello" },
 ];
-
-const scrollToSection = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-};
 
 const openInNewTab = (href: string) => {
   window.open(href, "_blank", "noreferrer");
@@ -144,6 +141,7 @@ export const CommandPalette = ({ open, onOpenChange }: Props) => {
       onOpenChange={onOpenChange}
       label="Command palette"
       shouldFilter
+      vimBindings={false}
       contentClassName="fixed left-1/2 top-24 z-[101] w-full max-w-xl -translate-x-1/2 overflow-hidden rounded-lg border border-border bg-surface font-mono shadow-2xl shadow-black/20"
       overlayClassName="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm"
     >
@@ -270,7 +268,7 @@ export const CommandPalette = ({ open, onOpenChange }: Props) => {
             PaletteInput; onSelect here covers a mouse click on Enter's
             focus-selected row in the rare case the item is visible via
             keyword search debugging. */}
-        <CommandGroup>
+        <CommandGroup value="hidden">
           <CommandItem value="sudo" onSelect={runSudo} className="hidden" keywords={["sudo"]} />
           <CommandItem value="konami" onSelect={runKonami} className="hidden" keywords={["konami"]} />
           <CommandItem value="motojoy" onSelect={runMotojoy} className="hidden" keywords={["motojoy"]} />
