@@ -8,7 +8,7 @@ export const Footer: FC = () => {
     <footer className="border-t border-border">
       <div className="container mx-auto flex items-center justify-between p-4 sm:flex-row sm:p-6">
         <Link href="/">
-          <Image src="/logo-white.svg" alt="logo-marco" height={60} width={60} className="invert dark:invert-0" />
+          <Image src="/logo-white.svg" alt="logo-marco" height={60} width={60} className="h-[60px] w-[60px] invert dark:invert-0" />
         </Link>
 
         <div className="-mx-2 flex">

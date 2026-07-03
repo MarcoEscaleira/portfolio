@@ -22,18 +22,22 @@ export const Header: FC = () => {
             height={60}
             width={60}
             loading="lazy"
-            className="invert dark:invert-0"
+            className="h-[60px] w-[60px] invert dark:invert-0"
           />
           <nav className="ml-8 flex gap-4 md:ml-12">
             {NAV_LINKS.map(([title, id]) => {
               return (
                 <Link
                   key={id}
-                  href={`#${id}`}
+                  href={`/#${id}`}
                   className="px-3 py-2 font-medium text-fg hover:border-b hover:border-b-accent"
                   onClick={e => {
-                    e.preventDefault();
-                    scrollToSection(id);
+                    // Off the home page (e.g. 404) the section doesn't exist —
+                    // let Link navigate to /#id instead of smooth-scrolling.
+                    if (document.getElementById(id)) {
+                      e.preventDefault();
+                      scrollToSection(id);
+                    }
                   }}
                 >
                   {title}

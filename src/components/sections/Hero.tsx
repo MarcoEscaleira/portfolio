@@ -182,7 +182,7 @@ export const Hero = () => {
               width={220}
               height={220}
               priority
-              className="relative rounded-full border-4 border-surface object-cover shadow-lg shadow-accent/10"
+              className="relative h-[220px] w-[220px] rounded-full border-4 border-surface object-cover shadow-lg shadow-accent/10"
             />
           </div>
         </motion.div>
