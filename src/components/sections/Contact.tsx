@@ -30,7 +30,7 @@ export const Contact = () => {
           variants={reveal}
           className="mb-10 flex items-baseline gap-3"
         >
-          <span className="font-mono text-sm text-accent">03.</span>
+          <span className="font-mono text-sm text-accent">05.</span>
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">Contact</h2>
         </motion.div>
 

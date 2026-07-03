@@ -20,7 +20,7 @@ export const Skills = () => {
     <section id="skills" className="w-full py-20 sm:py-28">
       <div className="mx-auto w-full max-w-5xl px-6">
         <div className="mb-10 flex items-baseline gap-3">
-          <span className="font-mono text-sm text-accent">02.</span>
+          <span className="font-mono text-sm text-accent">04.</span>
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">Skills</h2>
         </div>
 
