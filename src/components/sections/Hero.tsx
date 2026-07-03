@@ -35,8 +35,14 @@ const RoleCycle = () => {
     if (shouldReduceMotion) return;
 
     const interval = setInterval(() => {
-      setIndex(current => (current + 1) % ROLE_WORDS.length);
-    }, 2200);
+      setIndex(current => {
+        const next = current + 1;
+        if (next >= ROLE_WORDS.length - 1) {
+          clearInterval(interval);
+        }
+        return Math.min(next, ROLE_WORDS.length - 1);
+      });
+    }, 1200);
 
     return () => clearInterval(interval);
   }, [shouldReduceMotion]);
@@ -128,6 +134,7 @@ export const Hero = () => {
             <button
               type="button"
               onClick={openCommandPalette}
+              aria-label="Open command palette"
               className="group flex items-center gap-2 rounded-md border border-border bg-surface px-3 py-2 font-mono text-xs text-fg-muted transition-colors hover:border-accent hover:text-fg"
             >
               <span className="rounded border border-border bg-bg px-1.5 py-0.5 text-fg group-hover:border-accent">
