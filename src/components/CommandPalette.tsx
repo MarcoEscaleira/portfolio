@@ -261,18 +261,6 @@ export const CommandPalette = ({ open, onOpenChange }: Props) => {
             ))}
           </CommandGroup>
         )}
-
-        {/* Hidden commands: never listed, but still registered so cmdk counts
-            them as matches (keeps CommandEmpty from showing) when typed
-            exactly. Enter-on-exact-match is handled directly in
-            PaletteInput; onSelect here covers a mouse click on Enter's
-            focus-selected row in the rare case the item is visible via
-            keyword search debugging. */}
-        <CommandGroup value="hidden">
-          <CommandItem value="sudo" onSelect={runSudo} className="hidden" keywords={["sudo"]} />
-          <CommandItem value="konami" onSelect={runKonami} className="hidden" keywords={["konami"]} />
-          <CommandItem value="motojoy" onSelect={runMotojoy} className="hidden" keywords={["motojoy"]} />
-        </CommandGroup>
       </CommandList>
 
       {output && (

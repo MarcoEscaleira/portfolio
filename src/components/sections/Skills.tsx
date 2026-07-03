@@ -6,6 +6,11 @@ const EASE_OUT_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 export const Skills = () => {
   const shouldReduceMotion = useReducedMotion();
 
+  const reveal = {
+    hidden: shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_OUT_EXPO } },
+  };
+
   const group = {
     hidden: {},
     show: { transition: { staggerChildren: shouldReduceMotion ? 0 : 0.08 } },
@@ -19,10 +24,16 @@ export const Skills = () => {
   return (
     <section id="skills" className="w-full py-20 sm:py-28">
       <div className="mx-auto w-full max-w-5xl px-6">
-        <div className="mb-10 flex items-baseline gap-3">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={reveal}
+          className="mb-10 flex items-baseline gap-3"
+        >
           <span className="font-mono text-sm text-accent">04.</span>
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">Skills</h2>
-        </div>
+        </motion.div>
 
         <div className="space-y-8">
           {skills.map(({ label, skills: items }) => (

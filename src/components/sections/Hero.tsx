@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Github, Linkedin } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
@@ -7,6 +7,8 @@ import Link from "next/link";
 const EASE_OUT_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const ROLE_WORDS = ["React Native", "payments", "design systems", "Node & AWS"];
+
+const LONGEST_ROLE_WORD = ROLE_WORDS.reduce((longest, word) => (word.length > longest.length ? word : longest));
 
 const SOCIAL_LINKS = [
   { href: "https://github.com/MarcoEscaleira", label: "GitHub", icon: Github },
@@ -30,18 +32,19 @@ const useIsMac = () => {
 const RoleCycle = () => {
   const shouldReduceMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
+  const indexRef = useRef(0);
 
   useEffect(() => {
     if (shouldReduceMotion) return;
 
     const interval = setInterval(() => {
-      setIndex(current => {
-        const next = current + 1;
-        if (next >= ROLE_WORDS.length - 1) {
-          clearInterval(interval);
-        }
-        return Math.min(next, ROLE_WORDS.length - 1);
-      });
+      const next = indexRef.current + 1;
+      indexRef.current = Math.min(next, ROLE_WORDS.length - 1);
+      setIndex(indexRef.current);
+
+      if (next >= ROLE_WORDS.length - 1) {
+        clearInterval(interval);
+      }
     }, 1200);
 
     return () => clearInterval(interval);
@@ -52,7 +55,10 @@ const RoleCycle = () => {
   }
 
   return (
-    <span className="relative inline-block h-[1.2em] min-w-[9ch] align-bottom">
+    <span className="relative inline-block h-[1.2em] align-bottom">
+      <span className="invisible" aria-hidden="true">
+        {LONGEST_ROLE_WORD}
+      </span>
       <AnimatePresence mode="wait">
         <motion.span
           key={ROLE_WORDS[index]}

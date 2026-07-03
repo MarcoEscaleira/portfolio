@@ -75,17 +75,25 @@ export const EasterEggs = () => {
   }, [toast]);
 
   useEffect(() => {
-    const originalTitle = document.title;
+    let titleBeforeHide: string | null = null;
 
     const handleVisibilityChange = () => {
-      document.title = document.hidden ? AWAY_TITLE : originalTitle;
+      if (document.hidden) {
+        titleBeforeHide = document.title;
+        document.title = AWAY_TITLE;
+      } else if (titleBeforeHide !== null) {
+        document.title = titleBeforeHide;
+        titleBeforeHide = null;
+      }
     };
 
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
-      document.title = originalTitle;
+      if (titleBeforeHide !== null) {
+        document.title = titleBeforeHide;
+      }
     };
   }, []);
 
