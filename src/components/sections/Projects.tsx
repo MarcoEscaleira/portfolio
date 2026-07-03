@@ -40,7 +40,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: ProjectCardProps) => {
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        aria-controls={panelId}
+        aria-controls={isOpen ? panelId : undefined}
         className="group flex w-full items-start justify-between gap-4 px-5 py-5 text-left sm:px-6 sm:py-6"
       >
         <div className="min-w-0">
