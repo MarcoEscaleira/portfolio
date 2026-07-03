@@ -22,15 +22,15 @@ export const Header: FC = () => {
             height={60}
             width={60}
             loading="lazy"
-            className="h-[60px] w-[60px] invert dark:invert-0"
+            className="h-10 w-10 invert dark:invert-0 sm:h-[60px] sm:w-[60px]"
           />
-          <nav className="ml-8 flex gap-4 md:ml-12">
+          <nav className="ml-2 flex sm:ml-8 sm:gap-4 md:ml-12">
             {NAV_LINKS.map(([title, id]) => {
               return (
                 <Link
                   key={id}
                   href={`/#${id}`}
-                  className="px-3 py-2 font-medium text-fg hover:border-b hover:border-b-accent"
+                  className="px-1.5 py-2 text-sm font-medium text-fg hover:border-b hover:border-b-accent sm:px-3 sm:text-base"
                   onClick={e => {
                     // Off the home page (e.g. 404) the section doesn't exist —
                     // let Link navigate to /#id instead of smooth-scrolling.
