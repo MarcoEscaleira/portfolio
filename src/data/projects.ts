@@ -24,7 +24,7 @@ export const projects: Project[] = [
     tagline: "Tap to Pay on your phone — no extra hardware required.",
     problem: "Small merchants need to take card payments without buying extra hardware.",
     built:
-      "A React Native merchant app with Tap to Pay on both iPhone and Android, plus card reader integration for merchants who want it. It's backed by an AWS payments platform underneath. I work on this full-time, from the mobile app to the infrastructure that keeps it running.",
+      "A React Native merchant app with Tap to Pay on both iPhone and Android, plus card reader integration for merchants who want it. It's backed by an AWS payments platform underneath. This is my day job at yetipay, and it's live in merchants' hands.",
     stack: ["React Native", "TypeScript", "iOS/Android Tap to Pay", "AWS"],
     outcome:
       "A live, in-production payments platform merchants use today to take card payments straight from their phone.",
