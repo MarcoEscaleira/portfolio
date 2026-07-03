@@ -1,11 +1,13 @@
 import { PropsWithChildren } from "react";
 import { Analytics } from "@vercel/analytics/react";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 import { Header, Footer } from "@/components/layout";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
 
 export const Layout = ({ children }: PropsWithChildren) => {
   return (
@@ -19,10 +21,12 @@ export const Layout = ({ children }: PropsWithChildren) => {
       </Head>
 
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <div className="flex h-full min-h-screen w-full flex-col scroll-smooth bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 text-gray-100 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 dark:text-white">
+        <div
+          className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} flex h-full min-h-screen w-full flex-col bg-bg text-fg`}
+        >
           <Header />
 
-          <main className={`${inter.className} flex flex-1 justify-center`}>{children}</main>
+          <main className="flex flex-1 justify-center font-sans">{children}</main>
 
           <Footer />
         </div>
