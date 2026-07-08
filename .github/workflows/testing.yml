@@ -18,5 +18,6 @@ jobs:
         node-version-file: '.nvmrc'
         cache: 'yarn'
 
-    - run: yarn
+    - run: corepack enable
+    - run: yarn install --immutable
     - run: yarn lint
