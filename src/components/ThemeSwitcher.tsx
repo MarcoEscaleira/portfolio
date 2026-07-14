@@ -3,7 +3,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export const ThemeSwitcher = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -12,20 +12,22 @@ export const ThemeSwitcher = () => {
 
   if (!mounted) {
     return (
-      <button type="button" className="rounded-md p-2 text-fg-muted" aria-label="Color mode switch" disabled>
+      <button type="button" className="rounded-md p-2 text-fg-muted" aria-label="Toggle color theme" disabled>
         <Sun className="size-5" />
       </button>
     );
   }
 
+  const isDark = resolvedTheme === "dark";
+
   return (
     <button
       type="button"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
       className="rounded-md p-2 text-fg-muted transition-transform duration-200 hover:scale-110 hover:text-fg active:scale-100"
-      aria-label="Color mode switch"
+      aria-label="Toggle color theme"
     >
-      {theme === "light" ? <Moon className="size-5" /> : <Sun className="size-5" />}
+      {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
     </button>
   );
 };

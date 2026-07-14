@@ -20,14 +20,12 @@ const KONAMI_SEQUENCE = [
 const AWAY_TITLE = "👋 come back soon — marco";
 
 const fireConfetti = () => {
-  const accent = getComputedStyle(document.documentElement).getPropertyValue("--color-accent").trim();
-  const colorFromRgbTriplet = accent ? `rgb(${accent.replace(/\s+/g, ", ")})` : undefined;
-
+  // Hex approx of accent purple — canvas-confetti doesn't parse oklch()
   confetti({
     particleCount: 140,
     spread: 80,
     origin: { y: 0.6 },
-    colors: colorFromRgbTriplet ? [colorFromRgbTriplet, "#ffffff"] : undefined,
+    colors: ["#7c3aed", "#c4b5fd", "#eef2ff"],
   });
 };
 

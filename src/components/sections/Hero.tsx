@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-
-const EASE_OUT_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
+import { EASE_OUT_EXPO } from "@/components/sections/SectionHeading";
+import { scrollToSection } from "@/components/SmoothScroll";
 
 const ROLE_WORDS = ["React Native", "payments", "design systems", "Node & AWS"];
 
@@ -96,35 +96,37 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative w-full overflow-hidden py-20 sm:py-28">
+    <section id="home" className="relative w-full overflow-hidden section-pad">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent/10 blur-3xl"
+        className="pointer-events-none absolute -left-32 top-0 h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl"
       />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-fg/5 blur-3xl dark:bg-accent/5"
+      />
+
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-[1.2fr_0.8fr] md:gap-8"
+        className="relative mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-xl px-6 md:grid-cols-[1.15fr_0.85fr] md:gap-lg"
       >
         <div className="order-2 md:order-1">
-          <motion.p variants={item} className="mb-4 font-mono text-sm text-fg-muted">
-            hello world, I&apos;m
+          <motion.p variants={item} className="mb-sm font-mono text-sm text-fg-muted">
+            hi — I&apos;m
           </motion.p>
 
-          <motion.h1
-            variants={item}
-            className="text-balance font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl"
-          >
+          <motion.h1 variants={item} className="text-balance font-display text-display-lg font-semibold text-fg">
             Marco Escaleira
           </motion.h1>
 
-          <motion.p variants={item} className="mt-4 text-lg text-fg-muted sm:text-xl">
-            Full-stack engineer — React, React Native, Node, AWS
+          <motion.p variants={item} className="mt-md max-w-prose text-lg text-fg-muted sm:text-xl">
+            Full-stack engineer who builds products people actually use — React, React Native, Node, AWS.
           </motion.p>
 
-          <motion.p variants={item} className="mt-2 text-base text-fg-muted">
-            Building <RoleCycle /> at{" "}
+          <motion.p variants={item} className="mt-xs max-w-prose text-base text-fg-muted">
+            Right now: <RoleCycle /> at{" "}
             <Link
               href="https://yetipay.me"
               target="_blank"
@@ -136,12 +138,21 @@ export const Hero = () => {
             in London.
           </motion.p>
 
-          <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
+          <motion.div variants={item} className="mt-xl flex flex-wrap items-center gap-sm">
+            <button
+              type="button"
+              onClick={() => scrollToSection("contact")}
+              className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-3 font-display text-base font-semibold text-accent-fg transition-opacity hover:opacity-90"
+            >
+              <Mail className="size-4" aria-hidden />
+              Let&apos;s talk
+            </button>
+
             <button
               type="button"
               onClick={openCommandPalette}
               aria-label="Open command palette"
-              className="group flex items-center gap-2 rounded-md border border-border bg-surface px-3 py-2 font-mono text-xs text-fg-muted transition-colors hover:border-accent hover:text-fg"
+              className="group flex items-center gap-2 rounded-md border border-border bg-surface px-3 py-2.5 font-mono text-xs text-fg-muted transition-colors hover:border-accent hover:text-fg"
             >
               <span className="rounded border border-border bg-bg px-1.5 py-0.5 text-fg group-hover:border-accent">
                 {isMac ? "⌘" : "Ctrl"}
@@ -149,7 +160,7 @@ export const Hero = () => {
               <span className="rounded border border-border bg-bg px-1.5 py-0.5 text-fg group-hover:border-accent">
                 K
               </span>
-              <span>to explore</span>
+              <span>explore</span>
             </button>
 
             <div className="flex items-center gap-1">
@@ -173,7 +184,7 @@ export const Hero = () => {
           <div className="relative">
             <div
               aria-hidden
-              className="absolute -inset-3 rounded-full border border-accent/40"
+              className="absolute -inset-3 rounded-full border border-accent/35"
               style={{ borderStyle: "dashed" }}
             />
             <Image
@@ -181,8 +192,7 @@ export const Hero = () => {
               alt="Portrait of Marco Escaleira"
               width={220}
               height={220}
-              priority
-              className="relative h-[220px] w-[220px] rounded-full border-4 border-surface object-cover shadow-lg shadow-accent/10"
+              className="relative h-[200px] w-[200px] rounded-full border-4 border-surface object-cover sm:h-[220px] sm:w-[220px]"
             />
           </div>
         </motion.div>

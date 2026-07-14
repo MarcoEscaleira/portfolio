@@ -1,6 +1,6 @@
 import { PropsWithChildren, useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
-import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Atkinson_Hyperlegible, Azeret_Mono, Bricolage_Grotesque } from "next/font/google";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 import { CommandPalette } from "@/components/CommandPalette";
@@ -8,11 +8,21 @@ import { EasterEggs } from "@/components/EasterEggs";
 import { Header, Footer } from "@/components/layout";
 import { SmoothScroll } from "@/components/SmoothScroll";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
+const atkinson = Atkinson_Hyperlegible({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-atkinson",
+});
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+});
+const azeret = Azeret_Mono({
+  subsets: ["latin"],
+  variable: "--font-azeret",
+});
 
-const FONT_VARIABLES = `${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`;
+const FONT_VARIABLES = `${atkinson.variable} ${bricolage.variable} ${azeret.variable}`;
 
 export const Layout = ({ children }: PropsWithChildren) => {
   const [paletteOpen, setPaletteOpen] = useState(false);

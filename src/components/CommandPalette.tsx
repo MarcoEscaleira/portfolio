@@ -11,8 +11,8 @@ const CV_PATH = "/Marco-Escaleira-CV.pdf";
 const SECTION_COMMANDS: { id: string; label: string; description: string }[] = [
   { id: "home", label: "home", description: "back to the top" },
   { id: "about", label: "about", description: "who I am" },
-  { id: "projects", label: "projects", description: "things I've built" },
   { id: "experience", label: "experience", description: "where I've worked" },
+  { id: "projects", label: "projects", description: "things I've built" },
   { id: "skills", label: "skills", description: "tools of the trade" },
   { id: "contact", label: "contact", description: "say hello" },
 ];

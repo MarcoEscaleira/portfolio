@@ -1,16 +1,10 @@
 import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
+import { EASE_OUT_EXPO, SectionHeading } from "@/components/sections/SectionHeading";
 import { experience } from "@/data/experience";
-
-const EASE_OUT_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export const Experience = () => {
   const shouldReduceMotion = useReducedMotion();
-
-  const reveal = {
-    hidden: shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_OUT_EXPO } },
-  };
 
   const entry = {
     hidden: shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -16 },
@@ -18,20 +12,15 @@ export const Experience = () => {
   };
 
   return (
-    <section id="experience" className="w-full py-20 sm:py-28">
+    <section id="experience" className="w-full section-pad">
       <div className="mx-auto w-full max-w-5xl px-6">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={reveal}
-          className="mb-10 flex items-baseline gap-3"
-        >
-          <span className="font-mono text-sm text-accent">03.</span>
-          <h2 className="font-display text-3xl font-semibold sm:text-4xl">Experience</h2>
-        </motion.div>
+        <SectionHeading
+          index="02."
+          title="Experience"
+          eyebrow="Where I've shipped, mentored, and learned — from faculty web work to live payments."
+        />
 
-        <ol className="relative space-y-10 border-l border-border pl-8 sm:pl-10">
+        <ol className="relative space-y-xl border-l border-border pl-8 sm:pl-10">
           {experience.map(({ company, role, location, period, highlights, url }) => (
             <motion.li
               key={company}
@@ -46,8 +35,8 @@ export const Experience = () => {
                 className="absolute -left-[2.35rem] top-1.5 size-3 rounded-full border-2 border-accent bg-bg sm:-left-[2.85rem]"
               />
 
-              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <h3 className="font-display text-lg font-semibold sm:text-xl">
+              <div className="flex flex-wrap items-baseline gap-x-sm gap-y-2xs">
+                <h3 className="font-display text-display-sm font-semibold">
                   {url ? (
                     <Link
                       href={url}
@@ -74,13 +63,13 @@ export const Experience = () => {
                 )}
               </div>
 
-              <p className="mt-0.5 text-sm text-fg-muted">
+              <p className="mt-3xs text-sm text-fg-muted">
                 {role}
-                {location && <span className="text-fg-muted/70"> · {location}</span>}
+                {location && <span> · {location}</span>}
               </p>
 
               {highlights.length > 0 && (
-                <ul className="mt-3 space-y-1.5">
+                <ul className="mt-sm space-y-2xs">
                   {highlights.map(highlight => (
                     <li key={highlight} className="flex gap-2 text-sm text-fg-muted">
                       <span aria-hidden className="mt-2 size-1 flex-none rounded-full bg-fg-muted" />

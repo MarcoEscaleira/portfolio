@@ -2,14 +2,10 @@ import { useId, useState } from "react";
 import { ChevronDown, ExternalLink, Github, Globe, Server, Smartphone, Sparkles } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
+import { EASE_OUT_EXPO, SectionHeading } from "@/components/sections/SectionHeading";
 import { projects, type Project } from "@/data/projects";
 
-const EASE_OUT_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
-
-const LINK_META: Record<
-  keyof Project["links"],
-  { label: string; icon: typeof ExternalLink }
-> = {
+const LINK_META: Record<keyof Project["links"], { label: string; icon: typeof ExternalLink }> = {
   live: { label: "Live site", icon: Globe },
   repo: { label: "Repo", icon: Github },
   repoBackend: { label: "Backend repo", icon: Server },
@@ -33,7 +29,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: ProjectCardProps) => {
   return (
     <div
       className={`rounded-lg border bg-surface transition-colors ${
-        project.flagship ? "border-accent/60" : "border-border"
+        project.flagship ? "border-accent/50" : "border-border"
       }`}
     >
       <button
@@ -41,13 +37,13 @@ const ProjectCard = ({ project, isOpen, onToggle }: ProjectCardProps) => {
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-controls={isOpen ? panelId : undefined}
-        className="group flex w-full items-start justify-between gap-4 px-5 py-5 text-left sm:px-6 sm:py-6"
+        className="group flex w-full items-start justify-between gap-md px-5 py-5 text-left sm:px-6 sm:py-6"
       >
         <div className="min-w-0">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <div className="flex flex-wrap items-center gap-x-sm gap-y-2xs">
             {project.flagship && (
               <span className="inline-flex items-center gap-1 rounded-full bg-accent px-2.5 py-0.5 font-mono text-xs font-medium text-accent-fg">
-                <Sparkles className="size-3" />
+                <Sparkles className="size-3" aria-hidden />
                 Flagship
               </span>
             )}
@@ -60,8 +56,8 @@ const ProjectCard = ({ project, isOpen, onToggle }: ProjectCardProps) => {
             </h3>
             {project.year && <span className="font-mono text-xs text-fg-muted">{project.year}</span>}
           </div>
-          <p className="mt-1.5 text-fg-muted">{project.tagline}</p>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <p className="mt-2xs text-fg-muted">{project.tagline}</p>
+          <div className="mt-md flex flex-wrap gap-2xs">
             {project.stack.map(tech => (
               <span
                 key={tech}
@@ -98,22 +94,22 @@ const ProjectCard = ({ project, isOpen, onToggle }: ProjectCardProps) => {
             transition={{ duration: shouldReduceMotion ? 0 : 0.35, ease: EASE_OUT_EXPO }}
             className="overflow-hidden"
           >
-            <div className="space-y-4 border-t border-border px-5 pb-6 pt-5 sm:px-6">
+            <div className="space-y-md border-t border-border px-5 pb-6 pt-5 sm:px-6">
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wide text-accent">Problem</h4>
-                <p className="mt-1.5 text-sm text-fg-muted">{project.problem}</p>
+                <p className="mt-2xs max-w-prose text-sm text-fg-muted">{project.problem}</p>
               </div>
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wide text-accent">What I built</h4>
-                <p className="mt-1.5 text-sm text-fg-muted">{project.built}</p>
+                <p className="mt-2xs max-w-prose text-sm text-fg-muted">{project.built}</p>
               </div>
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wide text-accent">Outcome</h4>
-                <p className="mt-1.5 text-sm text-fg-muted">{project.outcome}</p>
+                <p className="mt-2xs max-w-prose text-sm text-fg-muted">{project.outcome}</p>
               </div>
 
               {availableLinks.length > 0 && (
-                <div className="flex flex-wrap items-center gap-4 pt-1">
+                <div className="flex flex-wrap items-center gap-md pt-3xs">
                   {availableLinks.map(key => {
                     const { label, icon: Icon } = LINK_META[key];
                     return (
@@ -124,7 +120,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: ProjectCardProps) => {
                         rel="noreferrer"
                         className="flex items-center gap-1.5 text-sm font-medium text-fg transition-colors hover:text-accent"
                       >
-                        <Icon className="size-4" />
+                        <Icon className="size-4" aria-hidden />
                         {label}
                       </Link>
                     );
@@ -154,25 +150,20 @@ export const Projects = () => {
   };
 
   return (
-    <section id="projects" className="w-full py-20 sm:py-28">
+    <section id="projects" className="w-full section-pad">
       <div className="mx-auto w-full max-w-5xl px-6">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={reveal}
-          className="mb-10 flex items-baseline gap-3"
-        >
-          <span className="font-mono text-sm text-accent">02.</span>
-          <h2 className="font-display text-3xl font-semibold sm:text-4xl">Projects</h2>
-        </motion.div>
+        <SectionHeading
+          index="03."
+          title="Projects"
+          eyebrow="Real products, real constraints — open a card for problem, build, and outcome."
+        />
 
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
           variants={list}
-          className="space-y-4"
+          className="space-y-sm"
         >
           {projects.map(project => (
             <motion.div key={project.slug} variants={reveal}>
