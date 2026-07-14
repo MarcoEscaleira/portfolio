@@ -68,10 +68,10 @@ export const Layout = ({ children }: PropsWithChildren) => {
       </Head>
 
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <div className={`${FONT_VARIABLES} flex h-full min-h-screen w-full flex-col bg-bg text-fg`}>
+        <div className={`${FONT_VARIABLES} flex h-full min-h-screen w-full flex-col bg-bg font-sans text-fg`}>
           <Header />
 
-          <main className="flex flex-1 justify-center font-sans">{children}</main>
+          <main className="flex flex-1 justify-center">{children}</main>
 
           <Footer />
         </div>
