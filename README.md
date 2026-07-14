@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![Testing CI](https://github.com/MarcoEscaleira/portfolio/actions/workflows/testing.yml/badge.svg)](https://github.com/MarcoEscaleira/portfolio/actions/workflows/testing.yml) [![Deploy QA](https://github.com/MarcoEscaleira/portfolio/actions/workflows/deployQA.yml/badge.svg)](https://github.com/MarcoEscaleira/portfolio/actions/workflows/deployQA.yml) [![Deploy Prod](https://github.com/MarcoEscaleira/portfolio/actions/workflows/deployProd.yml/badge.svg)](https://github.com/MarcoEscaleira/portfolio/actions/workflows/deployProd.yml)
+[![Testing CI](https://github.com/MarcoEscaleira/portfolio/actions/workflows/testing.yml/badge.svg)](https://github.com/MarcoEscaleira/portfolio/actions/workflows/testing.yml) [![Deploy Prod](https://github.com/MarcoEscaleira/portfolio/actions/workflows/deployProd.yml/badge.svg)](https://github.com/MarcoEscaleira/portfolio/actions/workflows/deployProd.yml)
 </div>
 
 <h3 align="center">

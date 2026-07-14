@@ -55,14 +55,19 @@ Pre-commit hook runs `yarn lint` via Husky. Fix lint issues before committing.
 
 ## Git workflow
 
-- **Never** commit or merge directly to `main` or `qa`.
-- Branch from `qa`, open PRs targeting `qa`.
-- Merge to `main` only after QA validation.
+- **Never** commit or merge directly to `main`.
+- Branch from `main`, open PRs targeting `main`.
+- Production releases are **semver git tags** (`v*`) that trigger the Deploy Prod workflow.
 
 ```bash
-git checkout qa && git pull && git checkout -b <branch-name>
+git checkout main && git pull && git checkout -b <branch-name>
 # ... make changes, commit, push ...
-gh pr create --base qa
+gh pr create --base main
+
+# After merge, cut a production release:
+git checkout main && git pull
+git tag vX.Y.Z
+git push origin vX.Y.Z
 ```
 
 ### Commit messages
@@ -168,9 +173,10 @@ Always consider both when making changes — this is a public portfolio site.
 
 | Workflow | Trigger | Action |
 |----------|---------|--------|
-| `testing.yml` | Push to `main`/`qa`, PRs to `main` | `yarn lint` |
-| `deployQA.yml` | Push to `qa` | Deploy to Vercel (QA) |
-| `deployProd.yml` | Push to `main` | Deploy to Vercel (prod) |
+| `testing.yml` | Push/PR to `main` | `yarn lint` |
+| `deployProd.yml` | Push of tags `v*` (or manual dispatch) | Deploy to Vercel production |
+
+Preview deployments come from Vercel Git integration on PR/feature branches. Auto-deploys on `main` are disabled in `vercel.json` so only tagged releases promote production.
 
 ## Agent guidelines
 
