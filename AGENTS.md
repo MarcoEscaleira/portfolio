@@ -126,9 +126,10 @@ import { Header } from "@/components/layout";
 ### Styling
 
 - Use Tailwind utility classes; avoid inline styles unless animating dynamic values.
-- Design tokens live in `src/styles/global.css` as RGB CSS variables (`--color-bg`, `--color-fg`, etc.).
+- Design tokens live in `src/styles/global.css` as OKLCH CSS variables (`--color-bg`, `--color-fg`, etc.).
 - Tailwind maps them in `tailwind.config.js` — use semantic names: `bg-bg`, `text-fg`, `text-fg-muted`, `border-border`, `bg-accent`, `text-accent-fg`.
-- Fonts: `font-sans` (Inter), `font-display` (Space Grotesk), `font-mono` (JetBrains Mono).
+- Fonts: `font-sans` (Atkinson Hyperlegible), `font-display` (Bricolage Grotesque), `font-mono` (Azeret Mono).
+- Spacing tokens: `gap-sm`, `mb-xl`, `section-pad`, etc. (see `--space-*` in `global.css`).
 - Respect `useReducedMotion()` from Motion for animations.
 
 ### Data
@@ -181,3 +182,25 @@ Always consider both when making changes — this is a public portfolio site.
 6. **Verify in the browser** — for any UI, layout, or interaction change, run `yarn start:dev` and test in the browser before handing off. Check the affected pages, responsive breakpoints, dark/light theme, and animations where relevant.
 7. **Don't commit unless asked** — follow the user's git instructions.
 8. **Don't edit unrelated files** — no drive-by refactors.
+
+## Design Context
+
+> **Craft brief:** For the portfolio visual redesign, treat [`.impeccable.md`](.impeccable.md) as the source of truth (confirmed Design Brief + Design Context). Follow it for palette, type, section order, and done criteria.
+
+### Users
+Recruiters, engineering peers, and curious visitors. They arrive with little time and a skeptical eye — scanning for signal, not slogans. The site should prove depth quickly and leave a positive, personal reminder so they want to reach out.
+
+### Brand Personality
+**Playful · Transparent · Respectful.** Confident without peacocking; warm and human without being soft or vague. Emotionally: intrigue first, then trust — enough personality that they remember Marco, enough substance that they believe him.
+
+### Aesthetic Direction
+**Playful and bold**, never a generic CV that people bounce from. Dual theme (light + dark + system). Palette should be redefined around **blue and purple** as the starting point — current emerald/warm-neutral tokens are free to go. No fixed reference sites yet; anti-reference is the forgettable template portfolio.
+
+Typography, motion, and layout should feel distinctive and owned — not “another dark developer site.” Keep accessibility as a baseline (keyboard, focus, contrast, reduced motion), not an afterthought.
+
+### Design Principles
+1. **Memorable over safe** — Prefer a bold, playful choice that feels like Marco over a polished but generic one.
+2. **Depth on contact** — Surface personality immediately; reward a closer look with real craft and substance.
+3. **Transparent & respectful** — Clear hierarchy, honest content, no gimmicks that obscure who he is or how to reach out.
+4. **Blue–purple identity** — Build the system from blue/purple hues; tint neutrals toward that brand, keep accents rare and sharp.
+5. **Accessible by default** — Meet common accessibility standards (contrast, focus, keyboard, reduced motion) without diluting the bold direction.

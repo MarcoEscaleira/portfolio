@@ -5,8 +5,8 @@ export default function Home() {
     <div className="flex w-full flex-col divide-y divide-border">
       <Hero />
       <About />
-      <Projects />
       <Experience />
+      <Projects />
       <Skills />
       <Contact />
     </div>

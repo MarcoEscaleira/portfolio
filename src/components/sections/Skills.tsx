@@ -1,15 +1,9 @@
 import { motion, useReducedMotion } from "motion/react";
+import { EASE_OUT_EXPO, SectionHeading } from "@/components/sections/SectionHeading";
 import { skills } from "@/data/skills";
-
-const EASE_OUT_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export const Skills = () => {
   const shouldReduceMotion = useReducedMotion();
-
-  const reveal = {
-    hidden: shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_OUT_EXPO } },
-  };
 
   const group = {
     hidden: {},
@@ -22,20 +16,15 @@ export const Skills = () => {
   };
 
   return (
-    <section id="skills" className="w-full py-20 sm:py-28">
+    <section id="skills" className="w-full section-pad">
       <div className="mx-auto w-full max-w-5xl px-6">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={reveal}
-          className="mb-10 flex items-baseline gap-3"
-        >
-          <span className="font-mono text-sm text-accent">04.</span>
-          <h2 className="font-display text-3xl font-semibold sm:text-4xl">Skills</h2>
-        </motion.div>
+        <SectionHeading
+          index="04."
+          title="Skills"
+          eyebrow="Tools I reach for when the work needs to ship — not a laundry list."
+        />
 
-        <div className="space-y-8">
+        <div className="space-y-lg">
           {skills.map(({ label, skills: items }) => (
             <motion.div
               key={label}
@@ -44,8 +33,8 @@ export const Skills = () => {
               viewport={{ once: true, amount: 0.3 }}
               variants={group}
             >
-              <h3 className="mb-3 font-display text-sm uppercase tracking-wide text-fg-muted">{label}</h3>
-              <div className="flex flex-wrap gap-2">
+              <h3 className="mb-sm font-mono text-xs uppercase tracking-wide text-fg-muted">{label}</h3>
+              <div className="flex flex-wrap gap-2xs">
                 {items.map(skill => (
                   <motion.span
                     key={skill}

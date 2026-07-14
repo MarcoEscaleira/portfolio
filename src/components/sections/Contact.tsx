@@ -1,8 +1,7 @@
 import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
-
-const EASE_OUT_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
+import { EASE_OUT_EXPO, SectionHeading } from "@/components/sections/SectionHeading";
 
 const EMAIL = "marcoescaleira2000@gmail.com";
 
@@ -21,18 +20,13 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="w-full py-20 sm:py-28">
+    <section id="contact" className="w-full section-pad">
       <div className="mx-auto w-full max-w-5xl px-6">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={reveal}
-          className="mb-10 flex items-baseline gap-3"
-        >
-          <span className="font-mono text-sm text-accent">05.</span>
-          <h2 className="font-display text-3xl font-semibold sm:text-4xl">Contact</h2>
-        </motion.div>
+        <SectionHeading
+          index="05."
+          title="Contact"
+          eyebrow="Got a role, a project, or just want to talk shop? My inbox is open."
+        />
 
         <motion.div
           initial="hidden"
@@ -41,21 +35,22 @@ export const Contact = () => {
           variants={reveal}
           className="rounded-lg border border-border bg-surface px-6 py-10 sm:px-10"
         >
-          <p className="max-w-lg text-fg-muted">
-            Got a role, a project, or just want to talk shop about payments and React Native? My inbox is open.
+          <p className="max-w-prose text-fg-muted">
+            If you&apos;re hiring or building something in payments, mobile, or product engineering — I&apos;d like to
+            hear from you.
           </p>
 
           <Link
             href={`mailto:${EMAIL}`}
-            className="mt-6 inline-flex items-center gap-3 rounded-md bg-accent px-6 py-3 font-display text-lg font-semibold text-accent-fg transition-opacity hover:opacity-90"
+            className="mt-lg inline-flex min-h-11 items-center gap-3 rounded-md bg-accent px-6 py-3 font-display text-lg font-semibold text-accent-fg transition-opacity hover:opacity-90"
           >
-            <Mail className="size-5" />
+            <Mail className="size-5" aria-hidden />
             Say hello
           </Link>
 
-          <p className="mt-3 font-mono text-sm text-fg-muted">{EMAIL}</p>
+          <p className="mt-sm font-mono text-sm text-fg-muted">{EMAIL}</p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-border pt-6">
+          <div className="mt-xl flex flex-wrap items-center gap-md border-t border-border pt-lg">
             {SECONDARY_LINKS.map(({ href, label, icon: Icon, download }) => (
               <Link
                 key={label}
@@ -65,7 +60,7 @@ export const Contact = () => {
                 download={download}
                 className="flex items-center gap-2 text-sm text-fg-muted transition-colors hover:text-accent"
               >
-                <Icon className="size-4" />
+                <Icon className="size-4" aria-hidden />
                 {label}
               </Link>
             ))}
