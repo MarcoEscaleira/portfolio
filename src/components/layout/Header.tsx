@@ -14,7 +14,7 @@ const NAV_LINKS: [string, string][] = [
 
 export const Header: FC = () => {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-bg/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-bg/85 font-sans backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between py-2 pl-4 sm:flex-row sm:p-6">
         <section className="flex items-center">
           <Link href="/#home" aria-label="Marco Escaleira — home" className="shrink-0">

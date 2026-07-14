@@ -40,7 +40,9 @@ export const Footer: FC = () => {
         </div>
       </div>
 
-      <p className="pb-4 text-center font-mono text-xs text-fg-muted sm:pb-6">Built with care in London · Next.js</p>
+      <p className="pb-4 text-center font-mono text-xs text-fg-muted sm:pb-6">
+        Built with love, caffeine & AI collaboration
+      </p>
     </footer>
   );
 };

@@ -8,8 +8,6 @@ import { scrollToSection } from "@/components/SmoothScroll";
 
 const ROLE_WORDS = ["React Native", "payments", "design systems", "Node & AWS"];
 
-const LONGEST_ROLE_WORD = ROLE_WORDS.reduce((longest, word) => (word.length > longest.length ? word : longest));
-
 const SOCIAL_LINKS = [
   { href: "https://github.com/MarcoEscaleira", label: "GitHub", icon: Github },
   { href: "https://www.linkedin.com/in/marco-escaleira00/", label: "LinkedIn", icon: Linkedin },
@@ -54,24 +52,20 @@ const RoleCycle = () => {
     return <span className="text-accent">{ROLE_WORDS[0]}</span>;
   }
 
+  // Size to the active word so the surrounding sentence stays tightly spaced.
   return (
-    <span className="relative inline-block h-[1.2em] align-bottom">
-      <span className="invisible" aria-hidden="true">
-        {LONGEST_ROLE_WORD}
-      </span>
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={ROLE_WORDS[index]}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.35, ease: EASE_OUT_EXPO }}
-          className="absolute left-0 top-0 whitespace-nowrap text-accent"
-        >
-          {ROLE_WORDS[index]}
-        </motion.span>
-      </AnimatePresence>
-    </span>
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.span
+        key={ROLE_WORDS[index]}
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -8 }}
+        transition={{ duration: 0.3, ease: EASE_OUT_EXPO }}
+        className="inline-block whitespace-nowrap text-accent"
+      >
+        {ROLE_WORDS[index]}
+      </motion.span>
+    </AnimatePresence>
   );
 };
 
@@ -192,6 +186,7 @@ export const Hero = () => {
               alt="Portrait of Marco Escaleira"
               width={220}
               height={220}
+              priority
               className="relative h-[200px] w-[200px] rounded-full border-4 border-surface object-cover sm:h-[220px] sm:w-[220px]"
             />
           </div>
