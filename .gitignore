@@ -4,6 +4,13 @@
 /node_modules
 /.pnp
 .pnp.js
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # testing
 /coverage
@@ -39,3 +46,4 @@ next-env.d.ts
 .idea
 
 .vscode
+.superpowers/

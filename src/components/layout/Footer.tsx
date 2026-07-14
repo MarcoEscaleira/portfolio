@@ -5,17 +5,24 @@ import Link from "next/link";
 
 export const Footer: FC = () => {
   return (
-    <footer className={`bg-transparent`}>
+    <footer className="border-t border-border">
       <div className="container mx-auto flex items-center justify-between p-4 sm:flex-row sm:p-6">
-        <Link href="/">
-          <Image src="/logo-white.svg" alt="logo-marco" height={60} width={60} className="text-black" />
+        <Link href="/" aria-label="Marco Escaleira — home">
+          <Image
+            src="/logo-white.svg"
+            alt=""
+            height={60}
+            width={60}
+            className="h-[60px] w-[60px] invert dark:invert-0"
+          />
         </Link>
 
-        <div className="-mx-2 flex">
+        <div className="flex gap-2xs">
           <Link
             href="https://www.linkedin.com/in/marco-escaleira00/"
             target="_blank"
-            className="mx-2 text-gray-200 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
+            rel="noreferrer"
+            className="rounded-md p-2 text-fg-muted transition-colors duration-300 hover:text-accent"
             aria-label="LinkedIn"
           >
             <Linkedin />
@@ -24,13 +31,18 @@ export const Footer: FC = () => {
           <Link
             href="https://github.com/MarcoEscaleira"
             target="_blank"
-            className="mx-2 text-gray-200 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
-            aria-label="Github"
+            rel="noreferrer"
+            className="rounded-md p-2 text-fg-muted transition-colors duration-300 hover:text-accent"
+            aria-label="GitHub"
           >
             <Github />
           </Link>
         </div>
       </div>
+
+      <p className="pb-4 text-center font-mono text-xs text-fg-muted sm:pb-6">
+        Built with love, caffeine & AI collaboration
+      </p>
     </footer>
   );
 };
