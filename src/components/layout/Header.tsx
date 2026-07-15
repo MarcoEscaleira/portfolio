@@ -45,7 +45,7 @@ export const Header: FC<Props> = ({ pastHero = false, activeSection }) => {
               } ${pastHero ? "h-8 w-8 sm:h-10 sm:w-10" : "h-10 w-10 sm:h-[60px] sm:w-[60px]"}`}
             />
           </Link>
-          <nav aria-label="Primary" className="ml-2 flex sm:ml-8 sm:gap-1 md:ml-12">
+          <nav aria-label="Primary" className="ml-2 hidden md:ml-8 md:flex md:gap-1 lg:ml-12">
             {SECTIONS.map(({ id, label }) => {
               const isActive = activeSection === id;
 
@@ -55,8 +55,8 @@ export const Header: FC<Props> = ({ pastHero = false, activeSection }) => {
                   href={`/#${id}`}
                   aria-current={isActive ? "page" : undefined}
                   className={`px-1.5 py-2 text-sm font-medium transition-colors hover:text-accent sm:px-3 sm:text-base ${
-                    id === "home" ? "hidden sm:inline" : ""
-                  } ${isActive ? "text-accent" : "text-fg"}`}
+                    isActive ? "text-accent" : "text-fg"
+                  }`}
                   onClick={e => {
                     if (document.getElementById(id)) {
                       e.preventDefault();
