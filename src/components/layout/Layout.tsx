@@ -1,5 +1,6 @@
 import { PropsWithChildren, useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Atkinson_Hyperlegible, Azeret_Mono, Bricolage_Grotesque } from "next/font/google";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -99,6 +100,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
       </ThemeProvider>
 
       <Analytics />
+      <SpeedInsights />
     </>
   );
 };
