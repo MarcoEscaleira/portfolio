@@ -5,6 +5,12 @@ import { SECTIONS, type SectionId } from "@/data/sections";
 /** Sticky header height — keep in sync with scroll-padding / compact header. */
 const HEADER_PX = 80;
 
+const visibleRatio = (el: HTMLElement) => {
+  const rect = el.getBoundingClientRect();
+  const visible = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+  return rect.height > 0 ? Math.max(0, visible) / rect.height : 0;
+};
+
 export const useScrollNav = (enabled = true) => {
   const [pastHero, setPastHero] = useState(false);
   const [activeSection, setActiveSection] = useState<SectionId>("home");
@@ -38,6 +44,20 @@ export const useScrollNav = (enabled = true) => {
           current = id;
         }
       }
+
+      // Tail section: top may stay below activation line when user reaches page end.
+      const last = SECTIONS[SECTIONS.length - 1];
+      const lastEl = document.getElementById(last.id);
+      if (lastEl && current !== last.id) {
+        const lastRatio = visibleRatio(lastEl);
+        const currentEl = document.getElementById(current);
+        const currentRatio = currentEl ? visibleRatio(currentEl) : 0;
+
+        if (lastRatio >= 0.35 && lastRatio > currentRatio) {
+          current = last.id;
+        }
+      }
+
       setActiveSection(current);
     };
 
