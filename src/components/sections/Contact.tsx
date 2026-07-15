@@ -1,4 +1,4 @@
-import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { EASE_OUT_EXPO, SectionHeading } from "@/components/sections/SectionHeading";
@@ -8,7 +8,6 @@ const EMAIL = "marcoescaleira2000@gmail.com";
 const SECONDARY_LINKS = [
   { href: "https://www.linkedin.com/in/marco-escaleira00/", label: "LinkedIn", icon: Linkedin },
   { href: "https://github.com/MarcoEscaleira", label: "GitHub", icon: Github },
-  { href: "/Marco-Escaleira-CV.pdf", label: "Download CV", icon: Download, download: true },
 ];
 
 export const Contact = () => {
@@ -51,13 +50,12 @@ export const Contact = () => {
           <p className="mt-sm font-mono text-sm text-fg-muted">{EMAIL}</p>
 
           <div className="mt-xl flex flex-wrap items-center gap-md border-t border-border pt-lg">
-            {SECONDARY_LINKS.map(({ href, label, icon: Icon, download }) => (
+            {SECONDARY_LINKS.map(({ href, label, icon: Icon }) => (
               <Link
                 key={label}
                 href={href}
-                target={download ? undefined : "_blank"}
-                rel={download ? undefined : "noreferrer"}
-                download={download}
+                target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-2 text-sm text-fg-muted transition-colors hover:text-accent"
               >
                 <Icon className="size-4" aria-hidden />
