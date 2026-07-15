@@ -155,7 +155,7 @@ export const Projects = () => {
         <SectionHeading
           index="03."
           title="Projects"
-          eyebrow="Real products, real constraints — open a card for problem, build, and outcome."
+          eyebrow="Real products, real constraints — open a card for problem, who benefited, and impact."
         />
 
         <motion.div

@@ -22,7 +22,7 @@ export const About = () => {
         <SectionHeading
           index="01."
           title="About"
-          eyebrow="Portugal roots, London base — still curious about how products actually land in people's hands."
+          eyebrow="Portugal roots, London base — building products people actually use."
         />
 
         <div className="grid grid-cols-1 gap-xl md:grid-cols-[1.4fr_1fr]">
@@ -38,12 +38,13 @@ export const About = () => {
               the Faculty of Medicine in Porto. I taught at Mindera Academy, then moved from Porto to London.
             </p>
             <p>
-              These days I build payment products at yetipay — most recently Tap to Pay on iPhone and Android — and I
-              carry the on-call pager for a live payments platform. That part is its own kind of education.
+              I build production-ready products from frontend to backend — owning architecture, infrastructure,
+              developer experience, and customer-facing features. I enjoy shipping scalable software while improving
+              engineering velocity through automation, testing, and reusable systems.
             </p>
             <p className="rounded-md border border-border bg-surface px-4 py-3 font-mono text-sm text-fg">
-              <span className="text-accent">Currently:</span> shipping the yetipay merchant app in React Native, with
-              Tap to Pay on both iOS and Android.
+              <span className="text-accent">Currently:</span> shipping payments products at yetipay end to end —
+              merchant app, APIs, AWS, and on-call for a live platform.
             </p>
           </motion.div>
 
