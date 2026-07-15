@@ -17,25 +17,38 @@ export const Experience = () => {
         <SectionHeading
           index="02."
           title="Experience"
-          eyebrow="Where I've shipped, mentored, and learned — from faculty web work to live payments."
+          eyebrow="End-to-end ownership — from faculty web work to production payments, on-call included."
         />
 
         <ol className="relative space-y-xl border-l border-border pl-8 sm:pl-10">
-          {experience.map(({ company, role, location, period, highlights, url }) => (
+          {experience.map(({ company, role, location, period, highlights, url, flagship }) => (
             <motion.li
               key={company}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               variants={entry}
-              className="relative"
+              className={`relative ${
+                flagship
+                  ? "-ml-2 rounded-lg border border-accent/50 bg-surface px-5 py-5 sm:-ml-3 sm:px-6 sm:py-6"
+                  : ""
+              }`}
             >
               <span
                 aria-hidden
-                className="absolute -left-[2.35rem] top-1.5 size-3 rounded-full border-2 border-accent bg-bg sm:-left-[2.85rem]"
+                className={`absolute top-1.5 size-3 rounded-full border-2 border-accent bg-bg ${
+                  flagship
+                    ? "-left-[2.85rem] sm:-left-[3.35rem]"
+                    : "-left-[2.35rem] sm:-left-[2.85rem]"
+                }`}
               />
 
               <div className="flex flex-wrap items-baseline gap-x-sm gap-y-2xs">
+                {flagship && (
+                  <span className="rounded-full bg-accent px-2.5 py-0.5 font-mono text-xs font-medium text-accent-fg">
+                    Flagship
+                  </span>
+                )}
                 <h3 className="font-display text-display-sm font-semibold">
                   {url ? (
                     <Link

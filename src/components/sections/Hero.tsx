@@ -6,7 +6,7 @@ import Link from "next/link";
 import { EASE_OUT_EXPO } from "@/components/sections/SectionHeading";
 import { scrollToSection } from "@/components/SmoothScroll";
 
-const ROLE_WORDS = ["React Native", "payments", "design systems", "Node & AWS"];
+const ROLE_WORDS = ["Software Engineer", "Fullstack Engineer"];
 
 const SOCIAL_LINKS = [
   { href: "https://github.com/MarcoEscaleira", label: "GitHub", icon: Github },
@@ -61,7 +61,7 @@ const RoleCycle = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -8 }}
         transition={{ duration: 0.3, ease: EASE_OUT_EXPO }}
-        className="inline-block whitespace-nowrap text-accent"
+        className="inline-block text-accent"
       >
         {ROLE_WORDS[index]}
       </motion.span>
@@ -116,7 +116,8 @@ export const Hero = () => {
           </motion.h1>
 
           <motion.p variants={item} className="mt-md max-w-prose text-lg text-fg-muted sm:text-xl">
-            Full-stack engineer who builds products people actually use — React, React Native, Node, AWS.
+            Full-stack software engineer with 7+ years shipping scalable web and mobile products end to end —
+            React, React Native, Node.js, and AWS — from architecture to production.
           </motion.p>
 
           <motion.p variants={item} className="mt-xs max-w-prose text-base text-fg-muted">

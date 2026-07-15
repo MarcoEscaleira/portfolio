@@ -21,13 +21,14 @@ export const projects: Project[] = [
   {
     slug: "yetipay-merchant-app",
     title: "yetipay Merchant App",
-    tagline: "Tap to Pay on your phone — no extra hardware required.",
-    problem: "Small merchants need to take card payments without buying extra hardware.",
+    tagline: "New payment capabilities for merchants — no extra hardware required.",
+    problem:
+      "Small merchants needed to take card payments without buying dedicated hardware, limiting how they could grow revenue.",
     built:
-      "A React Native merchant app with Tap to Pay on both iPhone and Android, plus card reader integration for merchants who want it. It's backed by an AWS payments platform underneath. This is my day job at yetipay, and it's live in merchants' hands.",
-    stack: ["React Native", "TypeScript", "iOS/Android Tap to Pay", "AWS"],
+      "Merchant-facing Tap to Pay on iPhone and Android, plus card reader support for those who want it. Designed the backend services and AWS platform underneath so payments stay reliable in production. Day job at yetipay — live in merchants' hands.",
+    stack: ["React Native", "TypeScript", "iOS/Android Tap to Pay", "Node.js", "AWS"],
     outcome:
-      "A live, in-production payments platform merchants use today to take card payments straight from their phone.",
+      "A production payments product merchants use today — new revenue opportunities without extra hardware, backed by scalable backend services.",
     links: {
       company: "https://yetipay.me",
     },
@@ -36,13 +37,14 @@ export const projects: Project[] = [
   {
     slug: "meet-the-countries",
     title: "Meet The Countries",
-    tagline: "One product, three codebases, zero excuses.",
-    problem: "Wanted to prove I could own a full product end to end — web, API, and mobile — not just one layer of it.",
+    tagline: "One product vision — web, API, and mobile — owned end to end.",
+    problem:
+      "Wanted proof of owning a full product across every layer, not just one surface — and shipping it with the same discipline as production work.",
     built:
-      "A full-stack side project spanning a TypeScript/React frontend, a Node/Express/GraphQL/MongoDB backend running in Docker, and a React Native/Expo mobile app. All three share the same product vision, with CI/CD pipelines and Gherkin-driven E2E tests keeping everything honest.",
+      "A full-stack product spanning a TypeScript/React web app, a Node/Express/GraphQL/MongoDB API in Docker, and a React Native/Expo mobile app. CI/CD and Gherkin-driven E2E tests keep releases honest across all three.",
     stack: ["TypeScript", "React", "Node.js", "Express", "GraphQL", "MongoDB", "Docker", "React Native", "Expo"],
     outcome:
-      "A shipped, live product across web and mobile, with automated tests and pipelines doing the boring work for me.",
+      "A live product across web and mobile, with automated tests and pipelines carrying the operational load — end-to-end ownership from idea to ship.",
     links: {
       live: "https://meetthecountries.com",
       repo: "https://github.com/MarcoEscaleira/meetthecountries-frontend",
@@ -53,12 +55,14 @@ export const projects: Project[] = [
   {
     slug: "motojoy",
     title: "MotoJoy",
-    tagline: "Where I started — and I'm not embarrassed about it.",
-    problem: "Learning how a real e-commerce store actually works: storefront, cart, checkout, backoffice, all of it.",
+    tagline: "Where I learned how a real store actually works.",
+    problem:
+      "Needed to understand the full commerce loop — storefront, cart, checkout, and backoffice — by building one that could take real payments.",
     built:
-      "A PHP, jQuery, and Bootstrap e-commerce site with a storefront, shopping cart, backoffice for managing it all, and PayPal integration for actual payments. It's not fancy by today's standards, and that's exactly the point.",
+      "An e-commerce site with storefront, shopping cart, admin backoffice, and PayPal checkout. PHP, jQuery, and Bootstrap — not fancy by today's standards, and that's the point.",
     stack: ["PHP", "jQuery", "Bootstrap", "PayPal"],
-    outcome: "My first real end-to-end build — the project that taught me most of what came after.",
+    outcome:
+      "A working end-to-end commerce flow that taught the fundamentals everything since has built on.",
     links: {
       repo: "https://github.com/MarcoEscaleira/motojoy",
     },
@@ -66,12 +70,11 @@ export const projects: Project[] = [
   {
     slug: "should-you-do-it",
     title: "shouldYouDoIt",
-    tagline: "Can't decide? Let the app decide for you.",
-    problem: "Sometimes you just need something to make the call for you.",
-    built:
-      "A tiny, playful TypeScript app that makes decisions so you don't have to. No accounts, no config, just an answer.",
+    tagline: "Can't decide? Let the app make the call.",
+    problem: "Sometimes you need a tiny tool that removes decision friction — no accounts, no setup.",
+    built: "A playful TypeScript app that answers yes-or-no so you don't have to. One job, done with a smile.",
     stack: ["TypeScript"],
-    outcome: "A small, fun, live tool that does exactly one thing and does it with a smile.",
+    outcome: "A live, zero-friction decision helper that does exactly one thing well.",
     links: {
       repo: "https://github.com/MarcoEscaleira/shouldyoudoit",
       live: "https://shouldyoudoit.surge.sh/",

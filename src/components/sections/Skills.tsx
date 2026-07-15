@@ -21,7 +21,7 @@ export const Skills = () => {
         <SectionHeading
           index="04."
           title="Skills"
-          eyebrow="Tools I reach for when the work needs to ship — not a laundry list."
+          eyebrow="The stack I reach for when shipping production software — not a laundry list."
         />
 
         <div className="space-y-lg">
