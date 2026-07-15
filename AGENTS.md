@@ -185,7 +185,7 @@ Preview deployments come from Vercel Git integration on PR/feature branches. Aut
 3. **Keep content in `src/data/`** — don't scatter copy across components.
 4. **SEO & accessibility first** — treat both as ongoing requirements, not afterthoughts. Every UI change should preserve or improve semantic markup, keyboard access, metadata, and crawlable content.
 5. **Test locally** — run `yarn lint` and `yarn build` after non-trivial changes.
-6. **Verify in the browser** — for any UI, layout, or interaction change, run `yarn start:dev` and test in the browser before handing off. Check the affected pages, responsive breakpoints, dark/light theme, and animations where relevant.
+6. **Verify in the browser** — for any UI, layout, or interaction change, run `yarn start:dev` and test with Chrome MCP (`user-chrome-devtools`) before handing off. Check the affected pages, responsive breakpoints, dark/light theme, and animations where relevant. Capture screenshots and include them in the handoff reply for visual validation.
 7. **Don't commit unless asked** — follow the user's git instructions.
 8. **Don't edit unrelated files** — no drive-by refactors.
 

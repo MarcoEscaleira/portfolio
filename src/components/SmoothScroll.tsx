@@ -7,6 +7,26 @@ import Lenis from "lenis";
 // See scrollToSection below.
 let lenisInstance: Lenis | null = null;
 
+type ScrollListener = () => void;
+const scrollListeners = new Set<ScrollListener>();
+
+const notifyScrollListeners = () => {
+  scrollListeners.forEach(listener => listener());
+};
+
+/**
+ * Subscribe to scroll position changes (native + Lenis). Always also listens
+ * on `window` so reduced-motion / pre-Lenis mount still work.
+ */
+export const subscribeToScroll = (listener: ScrollListener): (() => void) => {
+  scrollListeners.add(listener);
+  window.addEventListener("scroll", listener, { passive: true });
+  return () => {
+    scrollListeners.delete(listener);
+    window.removeEventListener("scroll", listener);
+  };
+};
+
 /**
  * Mounts a Lenis smooth-scroll instance on the document for the lifetime of
  * the component. Renders nothing. Fully skipped (Lenis is never instantiated)
@@ -25,6 +45,7 @@ export const SmoothScroll = () => {
     const start = () => {
       lenis = new Lenis({ anchors: true });
       lenisInstance = lenis;
+      lenis.on("scroll", notifyScrollListeners);
 
       const raf = (time: number) => {
         lenis?.raf(time);
@@ -35,6 +56,7 @@ export const SmoothScroll = () => {
 
     const stop = () => {
       if (rafId !== undefined) cancelAnimationFrame(rafId);
+      lenis?.off("scroll", notifyScrollListeners);
       lenis?.destroy();
       lenis = undefined;
       rafId = undefined;

@@ -1,0 +1,13 @@
+---
+description: UI changes must be verified with Chrome MCP and screenshots before handoff
+alwaysApply: true
+---
+
+# UI verification (Chrome MCP)
+
+For any UI, layout, or interaction change on this portfolio:
+
+1. Run the local dev server and verify with **Chrome MCP** (`user-chrome-devtools`).
+2. Exercise the changed states (scroll, theme, breakpoints as relevant).
+3. Capture screenshots and **include them in the handoff reply** so the user can visually validate.
+4. Do not consider the task done until screenshots are in the chat response.
