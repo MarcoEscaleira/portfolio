@@ -47,6 +47,7 @@ yarn start:dev     # Dev server (next dev)
 yarn build         # Production build
 yarn start         # Serve production build
 yarn lint          # ESLint + auto-fix
+yarn release       # Interactive semver tag + optional prod deploy
 ```
 
 Uses the `node-modules` linker (see `.yarnrc.yml`) for Next.js compatibility. The Yarn version is pinned in `package.json` via `packageManager` — Corepack enforces it automatically.
@@ -66,9 +67,12 @@ gh pr create --base main
 
 # After merge, cut a production release:
 git checkout main && git pull
-git tag vX.Y.Z
-git push origin vX.Y.Z
+yarn release
 ```
+
+`yarn release` prompts for **patch / minor / major**, generates notes with [git-cliff](https://git-cliff.org) from Conventional Commits since the last tag, creates a local annotated tag, then asks whether to **deploy to production**. Saying yes pushes the tag (triggers Deploy Prod) and creates a GitHub Release. Saying no keeps the tag local so you can push later.
+
+Requirements: clean working tree, on `main`, [`gh`](https://cli.github.com/) authenticated.
 
 ### Commit messages
 
@@ -176,7 +180,7 @@ Always consider both when making changes — this is a public portfolio site.
 | `testing.yml` | Push/PR to `main` | `yarn lint` |
 | `deployProd.yml` | Push of tags `v*` (or manual dispatch) | Deploy to Vercel production |
 
-Preview deployments come from Vercel Git integration on PR/feature branches. Auto-deploys on `main` are disabled in `vercel.json` so only tagged releases promote production.
+Cut releases locally with `yarn release` (git-cliff notes + optional tag push). Preview deployments come from Vercel Git integration on PR/feature branches. Auto-deploys on `main` are disabled in `vercel.json` so only tagged releases promote production.
 
 ## Agent guidelines
 

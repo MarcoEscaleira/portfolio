@@ -8,7 +8,8 @@
     "start:dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "release": "node scripts/release.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.3.1",
@@ -33,6 +34,7 @@
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jsx-a11y": "6.9.0",
+    "git-cliff": "^2.13.1",
     "husky": "9.0.11",
     "postcss": "8.4.31",
     "prettier": "3.3.3",
