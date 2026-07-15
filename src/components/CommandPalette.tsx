@@ -2,20 +2,12 @@ import { KeyboardEvent, useEffect, useRef, useState } from "react";
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, useCommandState } from "cmdk";
 import { scrollToSection } from "@/components/SmoothScroll";
 import { projects } from "@/data/projects";
+import { SECTIONS } from "@/data/sections";
 
 const GITHUB_URL = "https://github.com/MarcoEscaleira";
 const LINKEDIN_URL = "https://www.linkedin.com/in/marco-escaleira00/";
 const EMAIL = "marcoescaleira2000@gmail.com";
 const CV_PATH = "/Marco-Escaleira-CV.pdf";
-
-const SECTION_COMMANDS: { id: string; label: string; description: string }[] = [
-  { id: "home", label: "home", description: "back to the top" },
-  { id: "about", label: "about", description: "who I am" },
-  { id: "experience", label: "experience", description: "where I've worked" },
-  { id: "projects", label: "projects", description: "things I've built" },
-  { id: "skills", label: "skills", description: "tools of the trade" },
-  { id: "contact", label: "contact", description: "say hello" },
-];
 
 const openInNewTab = (href: string) => {
   window.open(href, "_blank", "noreferrer");
@@ -107,7 +99,7 @@ export const CommandPalette = ({ open, onOpenChange }: Props) => {
   };
 
   const runHelp = () => {
-    const commandNames = SECTION_COMMANDS.map(c => c.label)
+    const commandNames = SECTIONS.map(c => c.label.toLowerCase())
       .concat(["whoami", "cv", "github", "linkedin", "email", "help"])
       .join(", ");
     setOutput(`available commands: ${commandNames}`);
@@ -164,14 +156,14 @@ export const CommandPalette = ({ open, onOpenChange }: Props) => {
           heading="navigate"
           className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-wide [&_[cmdk-group-heading]]:text-fg-muted"
         >
-          {SECTION_COMMANDS.map(({ id, label, description }) => (
+          {SECTIONS.map(({ id, label, description }) => (
             <CommandItem
               key={id}
-              value={label}
+              value={label.toLowerCase()}
               onSelect={() => runNavigate(id)}
               className="flex cursor-pointer items-center justify-between rounded-md px-3 py-2 text-sm text-fg data-[selected=true]:bg-bg data-[selected=true]:text-accent"
             >
-              <span>{label}</span>
+              <span>{label.toLowerCase()}</span>
               <span className="text-xs text-fg-muted">{description}</span>
             </CommandItem>
           ))}

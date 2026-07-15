@@ -2,11 +2,15 @@ import { PropsWithChildren, useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { Atkinson_Hyperlegible, Azeret_Mono, Bricolage_Grotesque } from "next/font/google";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { ThemeProvider } from "next-themes";
 import { CommandPalette } from "@/components/CommandPalette";
 import { EasterEggs } from "@/components/EasterEggs";
+import { GoToTop } from "@/components/GoToTop";
 import { Header, Footer } from "@/components/layout";
+import { SectionNav } from "@/components/SectionNav";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { useScrollNav } from "@/hooks/useScrollNav";
 
 const atkinson = Atkinson_Hyperlegible({
   subsets: ["latin"],
@@ -26,6 +30,9 @@ const FONT_VARIABLES = `${atkinson.variable} ${bricolage.variable} ${azeret.vari
 
 export const Layout = ({ children }: PropsWithChildren) => {
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const { pathname } = useRouter();
+  const isHome = pathname === "/";
+  const { pastHero, activeSection } = useScrollNav(isHome);
 
   useEffect(() => {
     // Radix (used by cmdk's Command.Dialog) portals into document.body,
@@ -69,7 +76,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
 
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <div className={`${FONT_VARIABLES} flex h-full min-h-screen w-full flex-col bg-bg font-sans text-fg`}>
-          <Header />
+          <Header pastHero={isHome && pastHero} activeSection={isHome ? activeSection : undefined} />
 
           <main className="flex flex-1 justify-center">{children}</main>
 
@@ -78,6 +85,12 @@ export const Layout = ({ children }: PropsWithChildren) => {
 
         <CommandPalette open={paletteOpen} onOpenChange={setPaletteOpen} />
         <EasterEggs />
+        {isHome ? (
+          <>
+            <SectionNav visible={pastHero} activeSection={activeSection} />
+            <GoToTop visible={pastHero} />
+          </>
+        ) : null}
         <SmoothScroll />
       </ThemeProvider>
 
