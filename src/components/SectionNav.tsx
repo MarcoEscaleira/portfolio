@@ -17,11 +17,11 @@ export const SectionNav = ({ visible, activeSection }: Props) => {
         <motion.nav
           key="section-nav"
           aria-label="Page sections"
-          initial={shouldReduceMotion ? false : { opacity: 0, x: -8 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={shouldReduceMotion ? undefined : { opacity: 0, x: -8 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, x: -8, y: "-50%" }}
+          animate={{ opacity: 1, x: 0, y: "-50%" }}
+          exit={shouldReduceMotion ? undefined : { opacity: 0, x: -8, y: "-50%" }}
           transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="pointer-events-none fixed left-4 top-1/2 z-30 hidden -translate-y-1/2 lg:block"
+          className="pointer-events-none fixed left-4 top-1/2 z-30 hidden lg:block"
         >
           <div className="pointer-events-auto relative flex flex-col items-center gap-3">
             <span
