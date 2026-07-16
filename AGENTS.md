@@ -4,7 +4,7 @@ Guidance for AI coding agents working in this repository.
 
 ## Project overview
 
-Personal portfolio site for [Marco Escaleira](https://escaleira.dev). A single-page Next.js app with section-based layout (Hero, About, Projects, Experience, Skills, Contact), dark/light theming, smooth scroll, a command palette, and a few easter eggs.
+Personal portfolio site for [Marco Escaleira](https://bymesc.dev). A single-page Next.js app with section-based layout (Hero, About, Projects, Experience, Skills, Contact), dark/light theming, smooth scroll, a command palette, and a few easter eggs.
 
 ## Tech stack
 
@@ -170,7 +170,7 @@ Always consider both when making changes — this is a public portfolio site.
 - **`Layout.tsx`** wraps every page: fonts, theme provider, header/footer, command palette, easter eggs, smooth scroll, analytics.
 - **Command palette** opens via `Cmd/Ctrl+K` or `window.dispatchEvent(new CustomEvent("open-command-palette"))`.
 - **Font variables** are applied to `document.body` because cmdk portals outside the layout tree.
-- **i18n** is configured for `en-US` with domain `escaleira.dev` in `next.config.js`.
+- **i18n** is configured for `en-US` with domain `bymesc.dev` in `next.config.js`.
 - **Images** use `next/image` where applicable.
 
 ## CI/CD

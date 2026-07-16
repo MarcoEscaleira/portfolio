@@ -11,6 +11,14 @@ import { GoToTop } from "@/components/GoToTop";
 import { Header, Footer } from "@/components/layout";
 import { SectionNav } from "@/components/SectionNav";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import {
+  SITE_DESCRIPTION,
+  SITE_IMAGE,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+  personJsonLd,
+} from "@/data/site";
 import { useScrollNav } from "@/hooks/useScrollNav";
 
 const atkinson = Atkinson_Hyperlegible({
@@ -68,11 +76,27 @@ export const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
       <Head>
-        <title>Marco Escaleira — Software Engineer</title>
-        <meta
-          name="description"
-          content="Full-stack software engineer with 7+ years shipping scalable web and mobile products — React, React Native, Node.js, and AWS."
+        <title>{SITE_TITLE}</title>
+        <meta name="description" content={SITE_DESCRIPTION} />
+        <link rel="canonical" href={`${SITE_URL}/`} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/`} />
+        <meta property="og:title" content={SITE_TITLE} />
+        <meta property="og:description" content={SITE_DESCRIPTION} />
+        <meta property="og:image" content={SITE_IMAGE} />
+        <meta property="og:site_name" content={SITE_NAME} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={SITE_TITLE} />
+        <meta name="twitter:description" content={SITE_DESCRIPTION} />
+        <meta name="twitter:image" content={SITE_IMAGE} />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
+
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
