@@ -34,8 +34,10 @@ export const About = () => {
             className="max-w-prose space-y-md text-fg-muted"
           >
             <p>
-              I grew up in Portugal, studied Computer Science (First-class), and took my first steps as a developer at
-              the Faculty of Medicine in Porto. I taught at Mindera Academy, then moved from Porto to London.
+              I grew up in Portugal and took my first steps as a developer at the Faculty of Medicine in Porto. I
+              moved from Porto to England while already at Mindera — kept shipping software and completed my Honours BSc
+              in Computer Science (First-class) along the way. I later taught at Mindera Academy; these days I&apos;m
+              based in London.
             </p>
             <p>
               I build production-ready products from frontend to backend — owning architecture, infrastructure,
