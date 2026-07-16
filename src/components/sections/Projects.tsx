@@ -1,6 +1,6 @@
 import { useId, useState } from "react";
 import { ChevronDown, ExternalLink, Github, Globe, Server, Smartphone, Sparkles } from "lucide-react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { EASE_OUT_EXPO, SectionHeading } from "@/components/sections/SectionHeading";
 import { projects, type Project } from "@/data/projects";
@@ -36,7 +36,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: ProjectCardProps) => {
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        aria-controls={isOpen ? panelId : undefined}
+        aria-controls={panelId}
         className="group flex w-full items-start justify-between gap-md px-5 py-5 text-left sm:px-6 sm:py-6"
       >
         <div className="min-w-0">
@@ -83,54 +83,50 @@ const ProjectCard = ({ project, isOpen, onToggle }: ProjectCardProps) => {
         </span>
       </button>
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            id={panelId}
-            key="content"
-            initial={shouldReduceMotion ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={shouldReduceMotion ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.35, ease: EASE_OUT_EXPO }}
-            className="overflow-hidden"
-          >
-            <div className="space-y-md border-t border-border px-5 pb-6 pt-5 sm:px-6">
-              <div>
-                <h4 className="font-mono text-xs uppercase tracking-wide text-accent">Problem</h4>
-                <p className="mt-2xs max-w-prose text-sm text-fg-muted">{project.problem}</p>
-              </div>
-              <div>
-                <h4 className="font-mono text-xs uppercase tracking-wide text-accent">What I built</h4>
-                <p className="mt-2xs max-w-prose text-sm text-fg-muted">{project.built}</p>
-              </div>
-              <div>
-                <h4 className="font-mono text-xs uppercase tracking-wide text-accent">Outcome</h4>
-                <p className="mt-2xs max-w-prose text-sm text-fg-muted">{project.outcome}</p>
-              </div>
+      <motion.div
+        id={panelId}
+        initial={false}
+        animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.35, ease: EASE_OUT_EXPO }}
+        className="overflow-hidden"
+        aria-hidden={!isOpen}
+      >
+        <div className="space-y-md border-t border-border px-5 pb-6 pt-5 sm:px-6">
+          <div>
+            <h4 className="font-mono text-xs uppercase tracking-wide text-accent">Problem</h4>
+            <p className="mt-2xs max-w-prose text-sm text-fg-muted">{project.problem}</p>
+          </div>
+          <div>
+            <h4 className="font-mono text-xs uppercase tracking-wide text-accent">What I built</h4>
+            <p className="mt-2xs max-w-prose text-sm text-fg-muted">{project.built}</p>
+          </div>
+          <div>
+            <h4 className="font-mono text-xs uppercase tracking-wide text-accent">Outcome</h4>
+            <p className="mt-2xs max-w-prose text-sm text-fg-muted">{project.outcome}</p>
+          </div>
 
-              {availableLinks.length > 0 && (
-                <div className="flex flex-wrap items-center gap-md pt-3xs">
-                  {availableLinks.map(key => {
-                    const { label, icon: Icon } = LINK_META[key];
-                    return (
-                      <Link
-                        key={key}
-                        href={project.links[key] as string}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-1.5 text-sm font-medium text-fg transition-colors hover:text-accent"
-                      >
-                        <Icon className="size-4" aria-hidden />
-                        {label}
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
+          {availableLinks.length > 0 && (
+            <div className="flex flex-wrap items-center gap-md pt-3xs">
+              {availableLinks.map(key => {
+                const { label, icon: Icon } = LINK_META[key];
+                return (
+                  <Link
+                    key={key}
+                    href={project.links[key] as string}
+                    target="_blank"
+                    rel="noreferrer"
+                    tabIndex={isOpen ? undefined : -1}
+                    className="flex items-center gap-1.5 text-sm font-medium text-fg transition-colors hover:text-accent"
+                  >
+                    <Icon className="size-4" aria-hidden />
+                    {label}
+                  </Link>
+                );
+              })}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </div>
+      </motion.div>
     </div>
   );
 };

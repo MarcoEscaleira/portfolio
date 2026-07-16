@@ -6,7 +6,7 @@ module.exports = {
     defaultLocale: 'en-US',
     domains: [
       {
-        domain: 'escaleira.dev',
+        domain: 'bymesc.dev',
         defaultLocale: 'en-US',
       },
     ],

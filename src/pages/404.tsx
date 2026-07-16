@@ -25,6 +25,7 @@ export default function NotFound() {
     <>
       <Head>
         <title>404 — Marco Escaleira</title>
+        <meta name="robots" content="noindex" />
       </Head>
 
       <div className="flex w-full flex-1 items-center justify-center px-6 py-24">

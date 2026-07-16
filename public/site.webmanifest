@@ -1,1 +1,25 @@
-{"name":"Escaleira Portfolio","short_name":"","icons":[],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone"}
+{
+  "name": "Marco Escaleira",
+  "short_name": "bymesc",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0f0e17",
+  "background_color": "#0f0e17",
+  "display": "standalone",
+  "start_url": "/"
+}

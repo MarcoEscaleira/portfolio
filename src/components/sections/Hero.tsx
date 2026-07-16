@@ -116,7 +116,7 @@ export const Hero = () => {
           </motion.h1>
 
           <motion.p variants={item} className="mt-md max-w-prose text-lg text-fg-muted sm:text-xl">
-            Full-stack software engineer with 7+ years shipping scalable web and mobile products end to end —
+            Full-stack software engineer with 7+ years shipping fintech and SaaS products end to end —
             React, React Native, Node.js, and AWS — from architecture to production.
           </motion.p>
 
