@@ -1,5 +1,4 @@
 // Highlights are sourced from Marco's CV summary and are pending Marco's review.
-// TODO(marco): fill exact dates
 export interface Experience {
   company: string;
   role: string;
@@ -69,7 +68,7 @@ export const experience: Experience[] = [
   {
     company: "FMUP (Faculty of Medicine, University of Porto)",
     role: "Early-career developer",
-    period: "",
+    period: "May 2018 – Jul 2018",
     highlights: ["First professional steps — web work that served faculty staff and students"],
   },
 ];
