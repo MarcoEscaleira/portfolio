@@ -1,13 +1,11 @@
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 import { Mail } from "lucide-react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { EASE_OUT_EXPO } from "@/components/sections/SectionHeading";
 import { scrollToSection } from "@/components/SmoothScroll";
-
-const ROLE_WORDS = ["Software Engineer", "Senior Software Engineer"];
 
 const SOCIAL_LINKS = [
   { href: "https://github.com/MarcoEscaleira", label: "GitHub", icon: GithubIcon },
@@ -26,48 +24,6 @@ const useIsMac = () =>
     () => /mac/i.test(navigator.platform),
     () => true,
   );
-
-const RoleCycle = () => {
-  const shouldReduceMotion = useReducedMotion();
-  const [index, setIndex] = useState(0);
-  const indexRef = useRef(0);
-
-  useEffect(() => {
-    if (shouldReduceMotion) return;
-
-    const interval = setInterval(() => {
-      const next = indexRef.current + 1;
-      indexRef.current = Math.min(next, ROLE_WORDS.length - 1);
-      setIndex(indexRef.current);
-
-      if (next >= ROLE_WORDS.length - 1) {
-        clearInterval(interval);
-      }
-    }, 1200);
-
-    return () => clearInterval(interval);
-  }, [shouldReduceMotion]);
-
-  if (shouldReduceMotion) {
-    return <span className="text-accent">{ROLE_WORDS[ROLE_WORDS.length - 1]}</span>;
-  }
-
-  // Size to the active word so the surrounding sentence stays tightly spaced.
-  return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.span
-        key={ROLE_WORDS[index]}
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -8 }}
-        transition={{ duration: 0.3, ease: EASE_OUT_EXPO }}
-        className="inline-block text-accent"
-      >
-        {ROLE_WORDS[index]}
-      </motion.span>
-    </AnimatePresence>
-  );
-};
 
 export const Hero = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -121,7 +77,7 @@ export const Hero = () => {
           </motion.p>
 
           <motion.p variants={item} className="mt-xs max-w-prose text-base text-fg-muted">
-            Right now: <RoleCycle /> at{" "}
+            Right now: <span className="text-accent">Senior Software Engineer</span> at{" "}
             <Link
               href="https://flockcover.com"
               target="_blank"

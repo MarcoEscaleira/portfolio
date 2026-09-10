@@ -192,6 +192,7 @@ Cut releases locally with `yarn release` (git-cliff notes + optional tag push). 
 6. **Verify in the browser** — for any UI, layout, or interaction change, run `yarn start:dev` and test with Chrome MCP (`user-chrome-devtools`) before handing off. Check the affected pages, responsive breakpoints, dark/light theme, and animations where relevant. Capture screenshots and include them in the handoff reply for visual validation.
 7. **Don't commit unless asked** — follow the user's git instructions.
 8. **Don't edit unrelated files** — no drive-by refactors.
+9. **Confirm ambiguous changes first** — when a user reports an issue or observation without a specific requested change, explain the likely options and wait for their choice before editing. Do not treat a diagnosis as authorization to implement a fix.
 
 ## Design Context
 
