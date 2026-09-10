@@ -8,7 +8,7 @@
     "start:dev": "next dev -p 4567",
     "build": "next build",
     "start": "next start -p 4567",
-    "lint": "next lint --fix",
+    "lint": "eslint --fix .",
     "release": "node scripts/release.mjs"
   },
   "dependencies": {
@@ -19,29 +19,33 @@
     "lenis": "^1.3.25",
     "lucide-react": "^0.378.0",
     "motion": "^12.42.2",
-    "next": "^14.2.5",
+    "next": "16.3.4",
     "next-themes": "^0.3.0",
     "normalize.css": "^8.0.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/canvas-confetti": "^1.9.0",
     "@types/node": "22.2.0",
-    "@types/react": "18.3.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "^19.2.5",
     "autoprefixer": "10.4.20",
-    "eslint": "8.57.0",
-    "eslint-config-next": "^14.2.5",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-jsx-a11y": "6.9.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
     "git-cliff": "^2.13.1",
     "husky": "9.0.11",
-    "postcss": "8.4.31",
+    "postcss": "^8.5.26",
     "prettier": "3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.6",
-    "tailwindcss": "3.4.9",
-    "typescript": "5.5.4"
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "5"
   },
-  "packageManager": "yarn@4.17.0+sha512.c2957de2f9025ab14d63b24d0d8be1f1655810e22c341042c27f7ecd017b180ec12db73d69ac366d71b304ef9f069349ce462de96f04f8f1da317f4f762c95ae"
+  "packageManager": "yarn@4.17.0+sha512.c2957de2f9025ab14d63b24d0d8be1f1655810e22c341042c27f7ecd017b180ec12db73d69ac366d71b304ef9f069349ce462de96f04f8f1da317f4f762c95ae",
+  "resolutions": {
+    "@types/react": "19.2.18"
+  }
 }

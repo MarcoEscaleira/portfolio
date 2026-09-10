@@ -1,13 +1,14 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
+import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { EASE_OUT_EXPO, SectionHeading } from "@/components/sections/SectionHeading";
 
 const EMAIL = "marcoescaleira2000@gmail.com";
 
 const SECONDARY_LINKS = [
-  { href: "https://www.linkedin.com/in/marco-escaleira00/", label: "LinkedIn", icon: Linkedin },
-  { href: "https://github.com/MarcoEscaleira", label: "GitHub", icon: Github },
+  { href: "https://www.linkedin.com/in/marco-escaleira00/", label: "LinkedIn", icon: LinkedinIcon },
+  { href: "https://github.com/MarcoEscaleira", label: "GitHub", icon: GithubIcon },
 ];
 
 export const Contact = () => {

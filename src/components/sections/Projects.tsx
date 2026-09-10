@@ -1,13 +1,14 @@
 import { useId, useState } from "react";
-import { ChevronDown, ExternalLink, Github, Globe, Server, Smartphone, Sparkles } from "lucide-react";
+import { ChevronDown, ExternalLink, Globe, Server, Smartphone, Sparkles } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
+import { GithubIcon } from "@/components/icons";
 import { EASE_OUT_EXPO, SectionHeading } from "@/components/sections/SectionHeading";
 import { projects, type Project } from "@/data/projects";
 
-const LINK_META: Record<keyof Project["links"], { label: string; icon: typeof ExternalLink }> = {
+const LINK_META: Record<keyof Project["links"], { label: string; icon: typeof ExternalLink | typeof GithubIcon }> = {
   live: { label: "Live site", icon: Globe },
-  repo: { label: "Repo", icon: Github },
+  repo: { label: "Repo", icon: GithubIcon },
   repoBackend: { label: "Backend repo", icon: Server },
   repoMobile: { label: "Mobile repo", icon: Smartphone },
   company: { label: "Company", icon: ExternalLink },

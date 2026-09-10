@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
 export const Footer: FC = () => {
   return (
@@ -25,7 +25,7 @@ export const Footer: FC = () => {
             className="rounded-md p-2 text-fg-muted transition-colors duration-300 hover:text-accent"
             aria-label="LinkedIn"
           >
-            <Linkedin />
+            <LinkedinIcon />
           </Link>
 
           <Link
@@ -35,7 +35,7 @@ export const Footer: FC = () => {
             className="rounded-md p-2 text-fg-muted transition-colors duration-300 hover:text-accent"
             aria-label="GitHub"
           >
-            <Github />
+            <GithubIcon />
           </Link>
         </div>
       </div>

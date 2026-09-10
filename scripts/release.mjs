@@ -12,9 +12,9 @@ import { spawnSync } from "node:child_process";
 import { mkdtempSync, writeFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
+import { stdin as input, stdout as output } from "node:process";
 import { createInterface } from "node:readline/promises";
 import { fileURLToPath } from "node:url";
-import { stdin as input, stdout as output } from "node:process";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const TAG_PREFIX = "v";
