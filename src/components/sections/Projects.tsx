@@ -6,7 +6,7 @@ import { GithubIcon } from "@/components/icons";
 import { EASE_OUT_EXPO, SectionHeading } from "@/components/sections/SectionHeading";
 import { projects, type Project } from "@/data/projects";
 
-const LINK_META: Record<keyof Project["links"], { label: string; icon: typeof ExternalLink }> = {
+const LINK_META: Record<keyof Project["links"], { label: string; icon: typeof ExternalLink | typeof GithubIcon }> = {
   live: { label: "Live site", icon: Globe },
   repo: { label: "Repo", icon: GithubIcon },
   repoBackend: { label: "Backend repo", icon: Server },
