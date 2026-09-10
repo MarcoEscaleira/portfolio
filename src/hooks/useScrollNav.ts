@@ -16,11 +16,7 @@ export const useScrollNav = (enabled = true) => {
   const [activeSection, setActiveSection] = useState<SectionId>("home");
 
   useEffect(() => {
-    if (!enabled) {
-      setPastHero(false);
-      setActiveSection("home");
-      return;
-    }
+    if (!enabled) return;
 
     const update = () => {
       const hero = document.getElementById("home");
@@ -71,5 +67,8 @@ export const useScrollNav = (enabled = true) => {
     };
   }, [enabled]);
 
-  return { pastHero, activeSection };
+  return {
+    pastHero: enabled ? pastHero : false,
+    activeSection: enabled ? activeSection : "home",
+  };
 };

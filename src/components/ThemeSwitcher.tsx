@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
+const emptySubscribe = () => () => undefined;
+
 export const ThemeSwitcher = () => {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  );
 
   if (!mounted) {
     return (

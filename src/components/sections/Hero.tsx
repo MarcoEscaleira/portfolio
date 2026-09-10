@@ -1,31 +1,31 @@
-import { useEffect, useRef, useState } from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { Mail } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { EASE_OUT_EXPO } from "@/components/sections/SectionHeading";
 import { scrollToSection } from "@/components/SmoothScroll";
 
 const ROLE_WORDS = ["Software Engineer", "Fullstack Engineer"];
 
 const SOCIAL_LINKS = [
-  { href: "https://github.com/MarcoEscaleira", label: "GitHub", icon: Github },
-  { href: "https://www.linkedin.com/in/marco-escaleira00/", label: "LinkedIn", icon: Linkedin },
+  { href: "https://github.com/MarcoEscaleira", label: "GitHub", icon: GithubIcon },
+  { href: "https://www.linkedin.com/in/marco-escaleira00/", label: "LinkedIn", icon: LinkedinIcon },
 ];
 
 const openCommandPalette = () => {
   window.dispatchEvent(new CustomEvent("open-command-palette"));
 };
 
-const useIsMac = () => {
-  const [isMac, setIsMac] = useState(true);
+const emptySubscribe = () => () => undefined;
 
-  useEffect(() => {
-    setIsMac(typeof navigator !== "undefined" && /mac/i.test(navigator.platform));
-  }, []);
-
-  return isMac;
-};
+const useIsMac = () =>
+  useSyncExternalStore(
+    emptySubscribe,
+    () => /mac/i.test(navigator.platform),
+    () => true,
+  );
 
 const RoleCycle = () => {
   const shouldReduceMotion = useReducedMotion();

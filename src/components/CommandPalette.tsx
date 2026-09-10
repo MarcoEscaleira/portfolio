@@ -69,19 +69,23 @@ const PaletteInput = ({ search, onSearchChange, onUnknownSubmit, exactCommands }
 export const CommandPalette = ({ open, onOpenChange }: Props) => {
   const [search, setSearch] = useState("");
   const [output, setOutput] = useState<string | null>(null);
+  const [prevOpen, setPrevOpen] = useState(open);
   const triggerRef = useRef<HTMLElement | null>(null);
+
+  if (open !== prevOpen) {
+    setPrevOpen(open);
+    if (!open) {
+      setSearch("");
+      setOutput(null);
+    }
+  }
 
   useEffect(() => {
     if (open) {
-      // cmdk's Dialog doesn't expose a Trigger, so capture whatever had
-      // focus (hotkey target or the Hero/404 chip) ourselves and restore it
-      // when the palette closes.
       triggerRef.current = document.activeElement as HTMLElement | null;
       return undefined;
     }
 
-    setSearch("");
-    setOutput(null);
     triggerRef.current?.focus?.();
     triggerRef.current = null;
     return undefined;

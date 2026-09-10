@@ -1,41 +1,65 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 /*
   Blue-led neutrals (hue ~265) + rare purple accent (hue ~300).
-  Tokens are OKLCH components: L% C H — composed via oklch() in Tailwind.
+  Palette vars are full OKLCH colors; @theme maps them to utilities (bg-bg, text-fg, …).
 */
 :root {
-  --color-bg: 97.2% 0.012 265;
-  --color-surface: 94.2% 0.018 265;
-  --color-border: 86.5% 0.024 268;
-  --color-fg: 24% 0.035 275;
-  --color-fg-muted: 46% 0.03 270;
-  --color-accent: 48% 0.19 302;
-  --color-accent-fg: 98% 0.01 302;
-
-  --space-3xs: 0.25rem;
-  --space-2xs: 0.5rem;
-  --space-xs: 0.75rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-2xl: 4rem;
-  --space-3xl: 6rem;
-
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --palette-bg: oklch(97.2% 0.012 265);
+  --palette-surface: oklch(94.2% 0.018 265);
+  --palette-border: oklch(86.5% 0.024 268);
+  --palette-fg: oklch(24% 0.035 275);
+  --palette-fg-muted: oklch(46% 0.03 270);
+  --palette-accent: oklch(48% 0.19 302);
+  --palette-accent-fg: oklch(98% 0.01 302);
 }
 
 .dark {
-  --color-bg: 15.5% 0.022 265;
-  --color-surface: 20% 0.028 265;
-  --color-border: 30% 0.032 268;
-  --color-fg: 93% 0.018 265;
-  --color-fg-muted: 72% 0.025 268;
-  --color-accent: 76% 0.14 302;
-  --color-accent-fg: 18% 0.04 302;
+  --palette-bg: oklch(15.5% 0.022 265);
+  --palette-surface: oklch(20% 0.028 265);
+  --palette-border: oklch(30% 0.032 268);
+  --palette-fg: oklch(93% 0.018 265);
+  --palette-fg-muted: oklch(72% 0.025 268);
+  --palette-accent: oklch(76% 0.14 302);
+  --palette-accent-fg: oklch(18% 0.04 302);
+}
+
+@theme inline {
+  --color-bg: var(--palette-bg);
+  --color-surface: var(--palette-surface);
+  --color-border: var(--palette-border);
+  --color-fg: var(--palette-fg);
+  --color-fg-muted: var(--palette-fg-muted);
+  --color-accent: var(--palette-accent);
+  --color-accent-fg: var(--palette-accent-fg);
+
+  --font-sans: var(--font-atkinson), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: var(--font-azeret), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+
+  --text-display-lg: clamp(2.75rem, 6vw, 4.25rem);
+  --text-display-lg--line-height: 1.05;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-md: clamp(1.75rem, 3.5vw, 2.5rem);
+  --text-display-md--line-height: 1.15;
+  --text-display-md--letter-spacing: -0.015em;
+  --text-display-sm: clamp(1.25rem, 2vw, 1.5rem);
+  --text-display-sm--line-height: 1.25;
+
+  --spacing-3xs: 0.25rem;
+  --spacing-2xs: 0.5rem;
+  --spacing-xs: 0.75rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
@@ -63,21 +87,15 @@ section[id] {
 }
 
 ::selection {
-  background-color: oklch(var(--color-accent) / 0.28);
-  color: oklch(var(--color-fg));
+  background-color: color-mix(in oklch, var(--palette-accent) 28%, transparent);
+  color: var(--palette-fg);
 }
 
 :focus-visible {
-  outline: 2px solid oklch(var(--color-accent));
+  outline: 2px solid var(--palette-accent);
   outline-offset: 2px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .section-pad {
-    padding-block: clamp(4rem, 8vw, 7rem);
-  }
+@utility section-pad {
+  padding-block: clamp(4rem, 8vw, 7rem);
 }
