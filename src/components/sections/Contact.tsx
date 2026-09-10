@@ -25,7 +25,7 @@ export const Contact = () => {
         <SectionHeading
           index="05."
           title="Contact"
-          eyebrow="Hiring for full-stack, fintech, or SaaS engineering work? My inbox is open."
+          eyebrow="Building thoughtful software or financial products? I’m always happy to compare notes."
         />
 
         <motion.div
@@ -36,8 +36,8 @@ export const Contact = () => {
           className="rounded-lg border border-border bg-surface px-6 py-10 sm:px-10"
         >
           <p className="max-w-prose text-fg-muted">
-            If you&apos;re hiring or building something in fintech or SaaS — full-stack work with real production
-            ownership across web, mobile, or backend — I&apos;d like to hear from you.
+            If you&apos;re an engineer, product builder, or working on financial technology — especially across web,
+            mobile, backend, or infrastructure — I&apos;d be glad to connect.
           </p>
 
           <Link

@@ -45,8 +45,8 @@ export const About = () => {
               engineering velocity through automation, testing, and reusable systems.
             </p>
             <p className="rounded-md border border-border bg-surface px-4 py-3 font-mono text-sm text-fg">
-              <span className="text-accent">Currently:</span> shipping payments products at yetipay end to end —
-              merchant app, APIs, AWS, and on-call for a live platform.
+              <span className="text-accent">Currently:</span> Senior Software Engineer at Flock, building connected
+              fleet insurance designed to reduce risk and help keep drivers safer.
             </p>
           </motion.div>
 

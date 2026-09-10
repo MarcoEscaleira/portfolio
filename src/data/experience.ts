@@ -6,16 +6,26 @@ export interface Experience {
   period: string;
   highlights: string[];
   url?: string;
-  flagship?: boolean;
+  currentRole?: boolean;
 }
 
 export const experience: Experience[] = [
   {
+    company: "Flock",
+    role: "Senior Software Engineer",
+    location: "London, UK",
+    period: "Sep 2026 – Present",
+    currentRole: true,
+    highlights: [
+      "Joined the engineering team building connected fleet insurance designed to reduce risk and help keep drivers safer",
+    ],
+    url: "https://flockcover.com",
+  },
+  {
     company: "yetipay",
     role: "Fullstack Engineer",
     location: "London, UK",
-    period: "Current",
-    flagship: true,
+    period: "Sep 2024 – Sep 2026",
     highlights: [
       "Built the React Native merchant app from scratch — Tap to Pay on iPhone and Android, unlocking new payment capabilities for merchants",
       "Designed and implemented backend APIs powering production payment flows",
