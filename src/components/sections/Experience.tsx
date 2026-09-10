@@ -17,11 +17,11 @@ export const Experience = () => {
         <SectionHeading
           index="02."
           title="Experience"
-          eyebrow="End-to-end ownership — from faculty web work to production payments, on-call included."
+          eyebrow="End-to-end ownership — from faculty web work to financial products, on-call included."
         />
 
         <ol className="relative space-y-xl border-l border-border pl-8 sm:pl-10">
-          {experience.map(({ company, role, location, period, highlights, url, flagship }) => (
+          {experience.map(({ company, role, location, period, highlights, url, currentRole }) => (
             <motion.li
               key={company}
               initial="hidden"
@@ -29,7 +29,7 @@ export const Experience = () => {
               viewport={{ once: true, amount: 0.2 }}
               variants={entry}
               className={`relative ${
-                flagship
+                currentRole
                   ? "-ml-2 rounded-lg border border-accent/50 bg-surface px-5 py-5 sm:-ml-3 sm:px-6 sm:py-6"
                   : ""
               }`}
@@ -37,16 +37,16 @@ export const Experience = () => {
               <span
                 aria-hidden
                 className={`absolute top-1.5 size-3 rounded-full border-2 border-accent bg-bg ${
-                  flagship
+                  currentRole
                     ? "-left-[2.85rem] sm:-left-[3.35rem]"
                     : "-left-[2.35rem] sm:-left-[2.85rem]"
                 }`}
               />
 
               <div className="flex flex-wrap items-baseline gap-x-sm gap-y-2xs">
-                {flagship && (
+                {currentRole && (
                   <span className="rounded-full bg-accent px-2.5 py-0.5 font-mono text-xs font-medium text-accent-fg">
-                    Flagship
+                    Current role
                   </span>
                 )}
                 <h3 className="font-display text-display-sm font-semibold">
@@ -66,7 +66,7 @@ export const Experience = () => {
                 {period && (
                   <span
                     className={
-                      period === "Current"
+                      period.includes("Present")
                         ? "rounded-full bg-accent px-2.5 py-0.5 font-mono text-xs font-medium text-accent-fg"
                         : "font-mono text-xs text-fg-muted"
                     }

@@ -7,7 +7,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { EASE_OUT_EXPO } from "@/components/sections/SectionHeading";
 import { scrollToSection } from "@/components/SmoothScroll";
 
-const ROLE_WORDS = ["Software Engineer", "Fullstack Engineer"];
+const ROLE_WORDS = ["Software Engineer", "Senior Software Engineer"];
 
 const SOCIAL_LINKS = [
   { href: "https://github.com/MarcoEscaleira", label: "GitHub", icon: GithubIcon },
@@ -49,7 +49,7 @@ const RoleCycle = () => {
   }, [shouldReduceMotion]);
 
   if (shouldReduceMotion) {
-    return <span className="text-accent">{ROLE_WORDS[0]}</span>;
+    return <span className="text-accent">{ROLE_WORDS[ROLE_WORDS.length - 1]}</span>;
   }
 
   // Size to the active word so the surrounding sentence stays tightly spaced.
@@ -116,19 +116,19 @@ export const Hero = () => {
           </motion.h1>
 
           <motion.p variants={item} className="mt-md max-w-prose text-lg text-fg-muted sm:text-xl">
-            Full-stack software engineer with 7+ years shipping fintech and SaaS products end to end —
+            Full-stack software engineer with 7+ years shipping financial and SaaS products end to end —
             React, React Native, Node.js, and AWS — from architecture to production.
           </motion.p>
 
           <motion.p variants={item} className="mt-xs max-w-prose text-base text-fg-muted">
             Right now: <RoleCycle /> at{" "}
             <Link
-              href="https://yetipay.me"
+              href="https://flockcover.com"
               target="_blank"
               rel="noreferrer"
               className="font-medium text-fg underline decoration-border decoration-2 underline-offset-4 transition-colors hover:decoration-accent"
             >
-              yetipay
+              Flock
             </Link>{" "}
             in London.
           </motion.p>

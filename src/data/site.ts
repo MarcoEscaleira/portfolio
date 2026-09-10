@@ -1,10 +1,10 @@
 export const SITE_URL = "https://bymesc.dev";
 export const SITE_NAME = "Marco Escaleira";
 
-export const SITE_TITLE = "Marco Escaleira — Full-Stack Engineer | Fintech & SaaS";
+export const SITE_TITLE = "Marco Escaleira — Senior Software Engineer | Financial Products";
 
 export const SITE_DESCRIPTION =
-  "Marco Escaleira — full-stack engineer in London building fintech and SaaS products end to end. React, React Native, Node.js, and AWS. Open to hiring conversations.";
+  "Marco Escaleira — Senior Software Engineer at Flock with 7+ years building financial and SaaS products across web, mobile, backend, and AWS.";
 
 export const SITE_IMAGE = `${SITE_URL}/marco.jpg`;
 
@@ -22,11 +22,11 @@ export const personJsonLd = {
   url: SITE_URL,
   image: SITE_IMAGE,
   email: PERSON_EMAIL,
-  jobTitle: "Full-Stack Software Engineer",
+  jobTitle: "Senior Software Engineer",
   worksFor: {
     "@type": "Organization",
-    name: "yetipay",
-    url: "https://yetipay.me",
+    name: "Flock",
+    url: "https://flockcover.com",
   },
   address: {
     "@type": "PostalAddress",
